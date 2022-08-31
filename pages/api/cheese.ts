@@ -1,0 +1,29 @@
+import type { NextApiRequest, NextApiResponse } from "next";
+
+const cheese = (req: NextApiRequest, res: NextApiResponse) => {
+  res.status(200).json([
+    {
+      calorie: 35.3,
+      eng_name: "American Cheese",
+      img: "https://www.subway.co.kr/../images/menu/img_recipe_c01.jpg",
+      name: "아메리칸 치즈",
+      summary: null,
+    },
+    {
+      calorie: 53.6,
+      eng_name: "Shredded Cheese",
+      img: "https://www.subway.co.kr/../images/menu/img_recipe_c02.jpg",
+      name: "슈레드 치즈",
+      summary: null,
+    },
+    {
+      calorie: 43.8,
+      eng_name: "Mozzarella Cheese",
+      img: "https://www.subway.co.kr/../images/menu/img_recipe_c03.jpg",
+      name: "모차렐라 치즈",
+      summary: null,
+    },
+  ]);
+};
+
+export default cheese;
