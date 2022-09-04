@@ -1,8 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const bread = (req: NextApiRequest, res: NextApiResponse) => {
+interface ResType {
+  id: number;
+  calorie: number;
+  eng_name: string;
+  img: string;
+  name: string;
+  summary: string;
+}
+
+const bread = (req: NextApiRequest, res: NextApiResponse<ResType[]>) => {
   res.status(200).json([
     {
+      id: 0,
       calorie: 235,
       eng_name: "Honey Oat",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_b01.jpg",
@@ -10,6 +20,7 @@ const bread = (req: NextApiRequest, res: NextApiResponse) => {
       summary: "고소한 위트빵에 오트밀 가루를 묻혀 고소함과 식감이 두배로",
     },
     {
+      id: 1,
       calorie: 210,
       eng_name: "Hearty Italian",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_b02.jpg",
@@ -18,6 +29,7 @@ const bread = (req: NextApiRequest, res: NextApiResponse) => {
         "부드러운 화이트빵에 옥수수가루를 묻혀 겉은 바삭하고 고소하며 속은 부드럽게",
     },
     {
+      id: 2,
       calorie: 192,
       eng_name: "Wheat",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_b03.jpg",
@@ -25,6 +37,7 @@ const bread = (req: NextApiRequest, res: NextApiResponse) => {
       summary: "9가지 곡물로 만들어 건강하고 <br>고소한 맛의 곡물빵",
     },
     {
+      id: 3,
       calorie: 213,
       eng_name: "Parmesan Oregano",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_b04.jpg",
@@ -33,6 +46,7 @@ const bread = (req: NextApiRequest, res: NextApiResponse) => {
         "부드러운 화이트빵에 <br>파마산 오레가노 시즈닝을 묻혀 <br>허브향 가득",
     },
     {
+      id: 4,
       calorie: 202,
       eng_name: "White",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_b05.jpg",
@@ -40,6 +54,7 @@ const bread = (req: NextApiRequest, res: NextApiResponse) => {
       summary: "가장 클래식한 빵으로 부드러운 식감이 매력 포인트",
     },
     {
+      id: 5,
       calorie: 467,
       eng_name: "Flat Bread",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_b06.jpg",
