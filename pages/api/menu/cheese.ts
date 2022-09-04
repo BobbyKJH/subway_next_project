@@ -1,8 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const cheese = (req: NextApiRequest, res: NextApiResponse) => {
+interface ResType {
+  id: number;
+  calorie: number;
+  eng_name: string;
+  img: string;
+  name: string;
+  summary: string | null;
+}
+
+const cheese = (req: NextApiRequest, res: NextApiResponse<ResType[]>) => {
   res.status(200).json([
     {
+      id: 0,
       calorie: 35.3,
       eng_name: "American Cheese",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_c01.jpg",
@@ -10,6 +20,7 @@ const cheese = (req: NextApiRequest, res: NextApiResponse) => {
       summary: null,
     },
     {
+      id: 1,
       calorie: 53.6,
       eng_name: "Shredded Cheese",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_c02.jpg",
@@ -17,6 +28,7 @@ const cheese = (req: NextApiRequest, res: NextApiResponse) => {
       summary: null,
     },
     {
+      id: 2,
       calorie: 43.8,
       eng_name: "Mozzarella Cheese",
       img: "https://www.subway.co.kr/../images/menu/img_recipe_c03.jpg",
