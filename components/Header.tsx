@@ -13,13 +13,13 @@ const Header = () => {
         </Link>
 
         <div className="header">
-          <Link href={"/menu"}>
+          <Link href={"/menu/sandwich"}>
             <a className="nav">메뉴소개</a>
           </Link>
 
           <hr />
 
-          <Link href={"/combination"}>
+          <Link href={"/combination/sandwich"}>
             <a className="nav">조합</a>
           </Link>
 

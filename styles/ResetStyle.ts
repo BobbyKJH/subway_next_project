@@ -23,7 +23,7 @@ time, mark, audio, video {
   flex-wrap: wrap;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-
+  white-space: pre-line;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
