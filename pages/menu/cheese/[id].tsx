@@ -4,7 +4,6 @@ import axios from "axios";
 // Component
 import MenuProduct from "../../../components/menu/MenuProduct";
 import MenuSelect from "../../../components/menu/MenuSelect";
-import MenuReveiw from "../../../components/menu/MenuReview";
 // Style
 import { ProductPageStyle } from "../../../styles/menu/ProductStyle";
 // Type
@@ -29,8 +28,6 @@ const CheeseProduct = ({ cheese }: { cheese: ProductType }) => {
         calorie={cheese.calorie}
         summary={cheese.summary}
       />
-
-      <MenuReveiw storage={cheese.name} />
     </ProductPageStyle>
   );
 };
