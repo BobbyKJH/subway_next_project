@@ -5,13 +5,12 @@ import axios from "axios";
 import MenuProduct from "../../../components/menu/MenuProduct";
 import MenuSelect from "../../../components/menu/MenuSelect";
 // Style
-import { ProductPageStyle } from "../../../styles/menu/ProductStyle";
 // Type
 import { ProductType } from "../../../utils/type";
 
 const CheeseProduct = ({ cheese }: { cheese: ProductType }) => {
   return (
-    <ProductPageStyle>
+    <>
       <MenuProduct
         name={cheese.name}
         eng={cheese.eng_name}
@@ -28,7 +27,7 @@ const CheeseProduct = ({ cheese }: { cheese: ProductType }) => {
         calorie={cheese.calorie}
         summary={cheese.summary}
       />
-    </ProductPageStyle>
+    </>
   );
 };
 

@@ -2,12 +2,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 // Component
-import MenuComination from "../../../components/combination/MenuCombination";
 import RecipeBtn from "../../../components/combination/RecipeBtn";
-import {
-  CombinationCard,
-  CombinationPage,
-} from "../../../styles/combination/CombinationStyle";
+import MenuComination from "../../../components/combination/MenuCombination";
+
 // Style
 // Type
 import { MapType, ProductType } from "../../../utils/type";
@@ -24,18 +21,18 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
     <>
       <RecipeBtn arr={arr} />
 
-      <CombinationPage>
+      <>
         {sauce.map((item: ProductType) => (
-          <CombinationCard onClick={SauceMenu} value={item.name} key={item.id}>
+          <button onClick={SauceMenu} value={item.name} key={item.id}>
             <MenuComination
               img={item.img}
               name={item.name}
               eng={item.eng_name}
               calorie={item.calorie}
             />
-          </CombinationCard>
+          </button>
         ))}
-      </CombinationPage>
+      </>
     </>
   );
 };

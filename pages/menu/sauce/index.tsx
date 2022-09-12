@@ -6,7 +6,6 @@ import React from "react";
 import Menu from "../../../components/menu/Menu";
 import MenuButton from "../../../components/menu/MenuButton";
 // Style
-import { MenuListStyle } from "../../../styles/menu/MenuStyle";
 // Type
 import { MapType } from "../../../utils/type";
 
@@ -15,7 +14,7 @@ const Sandwich = ({ sauce }: { sauce: MapType }) => {
     <>
       <MenuButton />
 
-      <MenuListStyle>
+      <>
         {sauce.map((menu: MapType) => (
           <Link href={`/menu/sauce/${menu.id}`} key={menu.id}>
             <a>
@@ -23,7 +22,7 @@ const Sandwich = ({ sauce }: { sauce: MapType }) => {
             </a>
           </Link>
         ))}
-      </MenuListStyle>
+      </>
     </>
   );
 };

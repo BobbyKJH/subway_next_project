@@ -8,10 +8,6 @@ import { selectSandwich } from "../../../store/recipeSlice";
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
 // Style
-import {
-  CombinationCard,
-  CombinationPage,
-} from "../../../styles/combination/CombinationStyle";
 // Type
 import { MapType, ProductType } from "../../../utils/type";
 
@@ -26,18 +22,18 @@ const Sandwich = ({ sandwich }: { sandwich: MapType }) => {
   };
 
   return (
-    <CombinationPage>
+    <>
       {sandwich.map((item: ProductType) => (
-        <CombinationCard onClick={SandwichMenu} value={item.img} key={item.id}>
+        <button onClick={SandwichMenu} value={item.img} key={item.id}>
           <MenuComination
             img={item.img}
             name={item.name}
             eng={item.eng_name}
             calorie={item.calorie}
           />
-        </CombinationCard>
+        </button>
       ))}
-    </CombinationPage>
+    </>
   );
 };
 
