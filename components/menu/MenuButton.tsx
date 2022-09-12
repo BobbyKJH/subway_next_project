@@ -2,11 +2,10 @@
 import Link from "next/link";
 import React from "react";
 // Style
-import { MenuButtonStyle } from "../../styles/menu/MenuStyle";
 
 const MenuButton = () => {
   return (
-    <MenuButtonStyle>
+    <>
       <Link href={`/menu/sandwich`} id="sandwich">
         <a>샌드위치</a>
       </Link>
@@ -19,7 +18,7 @@ const MenuButton = () => {
       <Link href={`/menu/sauce`} id="sauce">
         <a>소스</a>
       </Link>
-    </MenuButtonStyle>
+    </>
   );
 };
 
