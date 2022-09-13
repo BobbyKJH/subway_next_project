@@ -6,15 +6,17 @@ import React from "react";
 import Menu from "../../../components/menu/Menu";
 import MenuButton from "../../../components/menu/MenuButton";
 // Style
+import { MenuCard, MenuPage } from "../../../styles/pages/MenuPage.styled";
 // Type
 import { MapType } from "../../../utils/type";
 
-const Sandwich = ({ bread }: { bread: MapType }) => {
+const BreadPage = ({ bread }: { bread: MapType }) => {
   return (
-    <>
+    <MenuPage>
+      {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
 
-      <>
+      <MenuCard>
         {bread.map((menu: MapType) => (
           <Link href={`/menu/bread/${menu.id}`} key={menu.id}>
             <a>
@@ -22,12 +24,12 @@ const Sandwich = ({ bread }: { bread: MapType }) => {
             </a>
           </Link>
         ))}
-      </>
-    </>
+      </MenuCard>
+    </MenuPage>
   );
 };
 
-export default Sandwich;
+export default BreadPage;
 
 export const getStaticProps = async () => {
   try {
