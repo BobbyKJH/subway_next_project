@@ -2,14 +2,17 @@
 import React from "react";
 
 interface Type {
+  name: string;
   sandwich: string;
   bread: string;
   cheese: string;
   sauce: string[];
 }
 
-const Result = ({ sandwich, bread, cheese, sauce }: Type) => (
+const Result = ({ name, sandwich, bread, cheese, sauce }: Type) => (
   <>
+    <span>{name}</span>
+
     <img src={sandwich} alt={sandwich} />
 
     <div>
