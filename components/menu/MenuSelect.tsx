@@ -8,7 +8,7 @@ interface MenuSelectType {
   name: string;
   eng: string;
   img: string;
-  summary: string;
+  summary?: string;
   calorie: number;
 }
 

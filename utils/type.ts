@@ -13,7 +13,8 @@ export interface ProductType {
   img: string;
   name: string;
   eng_name: string;
-  summary: string;
+  summary?: string;
+  id?: number;
 }
 
 export interface MenuType {
@@ -27,4 +28,12 @@ export interface MenuType {
 // 모두 string
 export interface StringType {
   [key: string]: string;
+}
+
+// Storage Type
+export interface ReduxType {
+  sandwich: string;
+  bread: string;
+  cheese: string;
+  sauce: string[];
 }
