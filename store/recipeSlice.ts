@@ -7,6 +7,7 @@ import { StringType } from "../utils/type";
 
 // Define the initial state using that type
 const initialState: StringType = {
+  name: "",
   sandwich: "",
   bread: "",
   cheese: "",
@@ -16,6 +17,9 @@ export const counterSlice = createSlice({
   name: "recipe",
   initialState,
   reducers: {
+    selectName: (state, action: PayloadAction<string>) => {
+      state.name = action.payload;
+    },
     selectSandwich: (state, action: PayloadAction<string>) => {
       state.sandwich = action.payload;
     },
@@ -28,7 +32,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { selectSandwich, selectBread, selectCheese } =
+export const { selectName, selectSandwich, selectBread, selectCheese } =
   counterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
