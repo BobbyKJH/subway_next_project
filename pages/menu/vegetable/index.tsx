@@ -10,17 +10,16 @@ import { MenuCard, MenuPage } from "../../../styles/pages/MenuPage.styled";
 // Type
 import { MapType } from "../../../utils/type";
 
-const SaucePage = ({ sauce }: { sauce: MapType }) => {
+const VegetablePage = ({ vegetable }: { vegetable: MapType }) => {
   return (
     <MenuPage>
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
 
       <MenuCard>
-        {sauce.map((menu: MapType) => (
-          <Link href={`/menu/sauce/${menu.id}`} key={menu.id}>
+        {vegetable.map((menu: MapType) => (
+          <Link href={`/menu/vegetable/${menu.id}`} key={menu.id}>
             <a>
-              {/* 메뉴 카드 */}
               <Menu img={menu.img} name={menu.name} eng={menu.eng_name} />
             </a>
           </Link>
@@ -30,13 +29,13 @@ const SaucePage = ({ sauce }: { sauce: MapType }) => {
   );
 };
 
-export default SaucePage;
+export default VegetablePage;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/sauce");
+    const res = await axios.get("http://localhost:3000/api/menu/vegetable");
     const data = res.data;
-    return { props: { sauce: data } };
+    return { props: { vegetable: data } };
   } catch (err) {
     console.error(err);
   }
