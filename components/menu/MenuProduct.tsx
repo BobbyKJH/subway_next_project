@@ -7,7 +7,7 @@ interface MenuProductType {
   eng: string;
   img: string;
   calorie: number;
-  summary: string;
+  summary?: string;
 }
 
 const MenuProduct = ({ name, eng, img, calorie, summary }: MenuProductType) => {
