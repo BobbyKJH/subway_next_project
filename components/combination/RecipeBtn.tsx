@@ -14,6 +14,7 @@ const RecipeBtn = ({ arr }: { arr: string[] }) => {
     localStorage.setItem(
       "recipe",
       JSON.stringify({
+        name: select.name,
         sandwich: select.sandwich,
         bread: select.bread,
         cheese: select.cheese,
