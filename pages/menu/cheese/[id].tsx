@@ -7,6 +7,7 @@ import MenuSelect from "../../../components/menu/MenuSelect";
 // Style
 // Type
 import { ProductType } from "../../../utils/type";
+import { GetStaticPropsContext } from "next";
 
 const CheeseProduct = ({ cheese }: { cheese: ProductType }) => {
   return (
@@ -42,12 +43,12 @@ export const getStaticPaths = async () => {
         id: menu.id.toString(),
       },
     })),
-    fallback: true,
+    fallback: false,
   };
 };
 
-export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  const id = Number(params?.id);
   try {
     const res = await axios.get("http://localhost:3000/api/menu/cheese");
     const data = res.data[id];
