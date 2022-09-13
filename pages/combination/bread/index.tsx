@@ -7,6 +7,7 @@ import { useAppDispatch } from "../../../store/hooks";
 import { selectBread } from "../../../store/recipeSlice";
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
+import MenuList from "../../../components/combination/MenuList";
 // Style
 // Type
 import { MapType, ProductType } from "../../../utils/type";
@@ -33,6 +34,9 @@ const Bread = ({ bread }: { bread: MapType }) => {
           />
         </button>
       ))}
+
+      {/* 메뉴 선택 리스트 */}
+      <MenuList />
     </>
   );
 };

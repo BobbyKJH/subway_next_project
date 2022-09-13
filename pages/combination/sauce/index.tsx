@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // Component
 import RecipeBtn from "../../../components/combination/RecipeBtn";
 import MenuComination from "../../../components/combination/MenuCombination";
-
+import MenuList from "../../../components/combination/MenuList";
 // Style
 // Type
 import { MapType, ProductType } from "../../../utils/type";
@@ -19,20 +19,21 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
 
   return (
     <>
-      <RecipeBtn arr={arr} />
+      {sauce.map((item: ProductType) => (
+        <button onClick={SauceMenu} value={item.name} key={item.id}>
+          <MenuComination
+            img={item.img}
+            name={item.name}
+            eng={item.eng_name}
+            calorie={item.calorie}
+          />
+        </button>
+      ))}
 
-      <>
-        {sauce.map((item: ProductType) => (
-          <button onClick={SauceMenu} value={item.name} key={item.id}>
-            <MenuComination
-              img={item.img}
-              name={item.name}
-              eng={item.eng_name}
-              calorie={item.calorie}
-            />
-          </button>
-        ))}
-      </>
+      {/* 메뉴 선택 리스트 */}
+      <MenuList sauce={arr.slice(0, 3)} />
+      {/* 메뉴 리스트 완성 버튼 */}
+      <RecipeBtn arr={arr} />
     </>
   );
 };
