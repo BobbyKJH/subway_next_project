@@ -1,14 +1,15 @@
 // React
-import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 // Component
 import LogIn from "../components/login/LogIn";
-import Header from "../components/Header";
+import Layout from "./Layout";
 // Style
 import { GlobalStyle } from "../styles/ResetStyle";
 // Redux
 import { Provider } from "react-redux";
 import { store } from "../store/store";
+// Type
+import type { AppProps } from "next/app";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [nick, setNick] = useState<string | null>(null);
@@ -20,17 +21,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Provider store={store}>
-      <>
-        <GlobalStyle />
-        {nick ? (
-          <>
-            <Header />
-            <Component {...pageProps} />
-          </>
-        ) : (
-          <LogIn />
-        )}
-      </>
+      <GlobalStyle />
+      {nick ? (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
+        <LogIn />
+      )}
     </Provider>
   );
 };
