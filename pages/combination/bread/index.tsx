@@ -45,7 +45,7 @@ export default Bread;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/bread");
+    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "bread.json");
     const data = res.data;
     return { props: { bread: data } };
   } catch (err) {

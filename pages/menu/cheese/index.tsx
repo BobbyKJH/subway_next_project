@@ -33,7 +33,9 @@ export default CheesePage;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/cheese");
+    const res = await axios.get(
+      process.env.NEXT_PUBLIC_API_URL + "cheese.json"
+    );
     const data = res.data;
     return { props: { cheese: data } };
   } catch (err) {
