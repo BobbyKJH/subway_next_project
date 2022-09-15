@@ -33,7 +33,9 @@ export default VegetablePage;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/vegetable");
+    const res = await axios.get(
+      process.env.NEXT_PUBLIC_API_URL + "vegetable.json"
+    );
     const data = res.data;
     return { props: { vegetable: data } };
   } catch (err) {

@@ -34,7 +34,9 @@ export default SandwichPage;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/sandwich");
+    const res = await axios.get(
+      process.env.NEXT_PUBLIC_API_URL + "sandwich.json"
+    );
     const data = res.data;
     return { props: { sandwich: data } };
   } catch (err) {

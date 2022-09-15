@@ -15,7 +15,6 @@ const BreadPage = ({ bread }: { bread: MapType }) => {
     <MenuPage>
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
-
       <MenuCard>
         {bread.map((menu: MapType) => (
           <Link href={`/menu/bread/${menu.id}`} key={menu.id}>
@@ -33,7 +32,7 @@ export default BreadPage;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/bread");
+    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "bread.json");
     const data = res.data;
     return { props: { bread: data } };
   } catch (err) {

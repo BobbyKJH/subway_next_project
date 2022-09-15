@@ -35,7 +35,9 @@ const SandwichProduct = ({ sandwich }: { sandwich: ProductType }) => {
 export default SandwichProduct;
 
 export const getStaticPaths = async () => {
-  const res = await axios.get("http://localhost:3000/api/menu/sandwich");
+  const res = await axios.get(
+    process.env.NEXT_PUBLIC_API_URL + "sandwich.json"
+  );
   const data = res.data;
   return {
     paths: data.map((menu: { id: number }) => ({
@@ -47,10 +49,12 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
-  const id = Number(params?.id);
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const id = Number(context.params?.id);
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/sandwich");
+    const res = await axios.get(
+      process.env.NEXT_PUBLIC_API_URL + "sandwich.json"
+    );
     const data = res.data[id];
     return {
       props: { sandwich: data },

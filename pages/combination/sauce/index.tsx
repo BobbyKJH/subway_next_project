@@ -42,7 +42,7 @@ export default Sauce;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/menu/sauce");
+    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "sauce.json");
     const data = res.data;
     return { props: { sauce: data } };
   } catch (err) {
