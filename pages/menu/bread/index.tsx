@@ -6,16 +6,17 @@ import React from "react";
 import Menu from "../../../components/menu/Menu";
 import MenuButton from "../../../components/menu/MenuButton";
 // Style
-import { MenuCard, MenuPage } from "../../../styles/pages/MenuPage.styled";
+import { MenuPage } from "../../../styles/pages/MenuPage.styled";
 // Type
 import { MapType } from "../../../utils/type";
 
 const BreadPage = ({ bread }: { bread: MapType }) => {
   return (
-    <MenuPage>
+    <>
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
-      <MenuCard>
+
+      <MenuPage>
         {bread.map((menu: MapType) => (
           <Link href={`/menu/bread/${menu.id}`} key={menu.id}>
             <a>
@@ -23,8 +24,8 @@ const BreadPage = ({ bread }: { bread: MapType }) => {
             </a>
           </Link>
         ))}
-      </MenuCard>
-    </MenuPage>
+      </MenuPage>
+    </>
   );
 };
 
@@ -32,7 +33,7 @@ export default BreadPage;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "bread.json");
+    const res = await axios.get("https://bobbykjh.github.io/subway/bread.json");
     const data = res.data;
     return { props: { bread: data } };
   } catch (err) {

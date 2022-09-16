@@ -52,7 +52,7 @@ export default Sandwich;
 
 export const getStaticProps = async () => {
   try {
-    const res = await axios(process.env.NEXT_PUBLIC_API_URL + "sandwich.json");
+    const res = await axios("https://bobbykjh.github.io/subway/sandwich.json");
     const data = res.data;
     return { props: { sandwich: data } };
   } catch (err) {

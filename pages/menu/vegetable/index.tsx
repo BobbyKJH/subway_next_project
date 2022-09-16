@@ -6,7 +6,7 @@ import React from "react";
 import Menu from "../../../components/menu/Menu";
 import MenuButton from "../../../components/menu/MenuButton";
 // Style
-import { MenuCard, MenuPage } from "../../../styles/pages/MenuPage.styled";
+import { MenuPage } from "../../../styles/pages/MenuPage.styled";
 // Type
 import { MapType } from "../../../utils/type";
 
@@ -16,7 +16,7 @@ const VegetablePage = ({ vegetable }: { vegetable: MapType }) => {
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
 
-      <MenuCard>
+      <MenuPage>
         {vegetable.map((menu: MapType) => (
           <Link href={`/menu/vegetable/${menu.id}`} key={menu.id}>
             <a>
@@ -24,7 +24,7 @@ const VegetablePage = ({ vegetable }: { vegetable: MapType }) => {
             </a>
           </Link>
         ))}
-      </MenuCard>
+      </MenuPage>
     </MenuPage>
   );
 };
@@ -34,7 +34,7 @@ export default VegetablePage;
 export const getStaticProps = async () => {
   try {
     const res = await axios.get(
-      process.env.NEXT_PUBLIC_API_URL + "vegetable.json"
+      "https://bobbykjh.github.io/subway/vegetable.json"
     );
     const data = res.data;
     return { props: { vegetable: data } };

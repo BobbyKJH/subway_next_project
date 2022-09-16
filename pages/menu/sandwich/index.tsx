@@ -6,17 +6,17 @@ import React from "react";
 import Menu from "../../../components/menu/Menu";
 import MenuButton from "../../../components/menu/MenuButton";
 // Style
-import { MenuCard, MenuPage } from "../../../styles/pages/MenuPage.styled";
+import { MenuPage } from "../../../styles/pages/MenuPage.styled";
 // Type
 import { MapType } from "../../../utils/type";
 
 const SandwichPage = ({ sandwich }: { sandwich: MapType }) => {
   return (
-    <MenuPage>
+    <>
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
 
-      <MenuCard>
+      <MenuPage>
         {sandwich.map((menu: MapType) => (
           <Link href={`/menu/sandwich/${menu.id}`} key={menu.id}>
             <a>
@@ -25,8 +25,8 @@ const SandwichPage = ({ sandwich }: { sandwich: MapType }) => {
             </a>
           </Link>
         ))}
-      </MenuCard>
-    </MenuPage>
+      </MenuPage>
+    </>
   );
 };
 
@@ -35,7 +35,7 @@ export default SandwichPage;
 export const getStaticProps = async () => {
   try {
     const res = await axios.get(
-      process.env.NEXT_PUBLIC_API_URL + "sandwich.json"
+      "https://bobbykjh.github.io/subway/sandwich.json"
     );
     const data = res.data;
     return { props: { sandwich: data } };
