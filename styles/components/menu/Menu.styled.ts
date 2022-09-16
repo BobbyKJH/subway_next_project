@@ -1,53 +1,40 @@
 import styled from "styled-components";
 
 export const MenuBox = styled.div`
-  position: relative;
   display: inline-block;
   box-sizing: border-box;
-  text-align: center;
-  border: 1px solid black;
-  margin: 0 1rem 2rem 1rem;
-  width: 20rem;
-  @media (max-width: 67rem) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem auto;
-    width: 38rem;
+  overflow: hidden;
+  margin: 1rem;
+  width: 22rem;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px #80808085;
+  @media (max-width: 72rem) {
+    width: 25rem;
+  }
+  @media (max-width: 54rem) {
+    width: 34rem;
+    display: inline-flex;
   }
 `;
 
 export const MenuImg = styled.img`
-  display: block;
   box-sizing: border-box;
-  padding: 0 1rem;
   width: 100%;
-
-  @media (max-width: 67rem) {
-    width: 19rem;
+  @media (max-width: 54rem) {
+    width: 50%;
   }
 `;
 
 export const MenuName = styled.div`
-  display: block;
-  line-height: 30px;
+  margin: auto;
+  text-align: center;
+  line-height: 22px;
   .name {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    font-weight: 900;
   }
   .eng {
-    font-size: 0.7rem;
-    color: #ffa550;
-  }
-
-  @media (max-width: 67rem) {
-    width: 18rem;
-    align-items: center;
-    .name {
-      font-size: 0.9rem;
-    }
-    .eng {
-      font-size: 0.6rem;
-      color: #ffa550;
-    }
+    font-size: 0.5rem;
+    color: #ffa500;
   }
 `;
