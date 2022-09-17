@@ -6,6 +6,8 @@ import RecipeBtn from "../../../components/combination/RecipeBtn";
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
 // Style
+import { CombinationPage } from "../../../styles/pages/CombinationPage.styled";
+import { CombinationButton } from "../../../styles/components/combination/MenuCombination.styled";
 // Type
 import { MapType, ProductType } from "../../../utils/type";
 
@@ -18,23 +20,24 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
   };
 
   return (
-    <>
+    <CombinationPage>
       {sauce.map((item: ProductType) => (
-        <button onClick={SauceMenu} value={item.name} key={item.id}>
+        <CombinationButton onClick={SauceMenu} value={item.name} key={item.id}>
+          {/* 카드 */}
           <MenuComination
             img={item.img}
             name={item.name}
             eng={item.eng_name}
             calorie={item.calorie}
           />
-        </button>
+        </CombinationButton>
       ))}
 
       {/* 메뉴 선택 리스트 */}
       <MenuList sauce={arr.slice(0, 3)} />
       {/* 메뉴 리스트 완성 버튼 */}
       <RecipeBtn arr={arr} />
-    </>
+    </CombinationPage>
   );
 };
 
