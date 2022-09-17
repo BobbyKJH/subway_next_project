@@ -9,6 +9,8 @@ import { selectCheese } from "../../../store/recipeSlice";
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
 // Style
+import { CombinationButton } from "../../../styles/components/combination/MenuCombination.styled";
+import { CombinationPage } from "../../../styles/pages/CombinationPage.styled";
 // Type
 import { MapType, ProductType } from "../../../utils/type";
 
@@ -23,21 +25,26 @@ const Cheese = ({ cheese }: { cheese: MapType }) => {
   };
 
   return (
-    <>
+    <CombinationPage>
       {cheese.map((item: ProductType) => (
-        <button onClick={SandwichMenu} value={item.name} key={item.id}>
+        <CombinationButton
+          onClick={SandwichMenu}
+          value={item.name}
+          key={item.id}
+        >
+          {/* 카드 */}
           <MenuComination
             img={item.img}
             name={item.name}
             eng={item.eng_name}
             calorie={item.calorie}
           />
-        </button>
+        </CombinationButton>
       ))}
 
       {/* 메뉴 선택 리스트 */}
       <MenuList />
-    </>
+    </CombinationPage>
   );
 };
 
