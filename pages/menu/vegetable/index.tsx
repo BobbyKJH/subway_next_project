@@ -16,15 +16,13 @@ const VegetablePage = ({ vegetable }: { vegetable: MapType }) => {
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
 
-      <MenuPage>
-        {vegetable.map((menu: MapType) => (
-          <Link href={`/menu/vegetable/${menu.id}`} key={menu.id}>
-            <a>
-              <Menu img={menu.img} name={menu.name} eng={menu.eng_name} />
-            </a>
-          </Link>
-        ))}
-      </MenuPage>
+      {vegetable.map((menu: MapType) => (
+        <Link href={`/menu/vegetable/${menu.id}`} key={menu.id}>
+          <a>
+            <Menu img={menu.img} name={menu.name} eng={menu.eng_name} />
+          </a>
+        </Link>
+      ))}
     </MenuPage>
   );
 };
