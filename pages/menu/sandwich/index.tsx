@@ -12,21 +12,19 @@ import { MapType } from "../../../utils/type";
 
 const SandwichPage = ({ sandwich }: { sandwich: MapType }) => {
   return (
-    <>
+    <MenuPage>
       {/* 샌드위치, 빵, 치즈, 채소, 소스 버튼 */}
       <MenuButton />
 
-      <MenuPage>
-        {sandwich.map((menu: MapType) => (
-          <Link href={`/menu/sandwich/${menu.id}`} key={menu.id}>
-            <a>
-              {/* 메뉴 카드 */}
-              <Menu img={menu.img} name={menu.name} eng={menu.eng_name} />
-            </a>
-          </Link>
-        ))}
-      </MenuPage>
-    </>
+      {sandwich.map((menu: MapType) => (
+        <Link href={`/menu/sandwich/${menu.id}`} key={menu.id}>
+          <a>
+            {/* 메뉴 카드 */}
+            <Menu img={menu.img} name={menu.name} eng={menu.eng_name} />
+          </a>
+        </Link>
+      ))}
+    </MenuPage>
   );
 };
 
