@@ -10,7 +10,10 @@ import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
 // Style
 import { CombinationButton } from "../../../styles/components/combination/MenuCombination.styled";
-import { CombinationPage } from "../../../styles/pages/CombinationPage.styled";
+import {
+  CombinationPage,
+  CombinationTitle,
+} from "../../../styles/pages/CombinationPage.styled";
 // Type
 import { MapType, ProductType } from "../../../utils/type";
 
@@ -26,6 +29,10 @@ const Bread = ({ bread }: { bread: MapType }) => {
 
   return (
     <CombinationPage>
+      <CombinationTitle>
+        <span>빵</span>
+      </CombinationTitle>
+
       {bread.map((item: ProductType) => (
         <CombinationButton onClick={BreadMenu} value={item.name} key={item.id}>
           {/* 카드 */}

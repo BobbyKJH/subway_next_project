@@ -5,8 +5,9 @@ import React from "react";
 import { useAppSelector } from "../../store/hooks";
 import { selectMenu } from "../../store/recipeSlice";
 // Style
+import { RecipeButton } from "../../styles/components/combination/RecipeBtn.styled";
 
-const RecipeBtn = ({ arr }: { arr: string[] }) => {
+const RecipeBtn = ({ arr }: { arr: string[] | any }) => {
   const router = useRouter();
   const select = useAppSelector(selectMenu);
 
@@ -23,7 +24,7 @@ const RecipeBtn = ({ arr }: { arr: string[] }) => {
     );
     router.push("/combination/result");
   };
-  return <button onClick={Result}>완료</button>;
+  return <RecipeButton onClick={Result}>완료</RecipeButton>;
 };
 
 export default RecipeBtn;
