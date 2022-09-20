@@ -25,7 +25,11 @@ const RecipeBtn = ({ arr }: { arr: string[] | any }) => {
     );
     router.push("/combination/result");
   };
-  return <RecipeButton onClick={Result}>완료</RecipeButton>;
+  return (
+    <RecipeButton onClick={Result}>
+      <strong>완성</strong>
+    </RecipeButton>
+  );
 };
 
 export default RecipeBtn;
