@@ -16,6 +16,7 @@ const RecipeBtn = ({ arr }: { arr: string[] | any }) => {
       "recipe",
       JSON.stringify({
         name: select.name,
+        eng: select.eng,
         sandwich: select.sandwich,
         bread: select.bread,
         cheese: select.cheese,
