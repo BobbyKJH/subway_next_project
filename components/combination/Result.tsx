@@ -3,17 +3,19 @@ import React from "react";
 
 interface Type {
   name: string;
+  eng: string;
   sandwich: string;
   bread: string;
   cheese: string;
   sauce: string[];
 }
 
-const Result = ({ name, sandwich, bread, cheese, sauce }: Type) => (
+const Result = ({ name, eng, sandwich, bread, cheese, sauce }: Type) => (
   <>
-    <span>{name}</span>
-
     <img src={sandwich} alt={sandwich} />
+
+    <span>{name}</span>
+    <p>{eng}</p>
 
     <div>
       <p className="bread">{bread}</p>
@@ -21,8 +23,8 @@ const Result = ({ name, sandwich, bread, cheese, sauce }: Type) => (
       <p className="cheese">{cheese}</p>
 
       <div>
-        {sauce.map((sauce: string) => (
-          <p key={sauce}>{sauce}</p>
+        {sauce.map((sauce: string, idx: number) => (
+          <p key={idx}>{sauce}</p>
         ))}
       </div>
     </div>
