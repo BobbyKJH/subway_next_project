@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 // Component
 import MenuProduct from "../../../components/menu/MenuProduct";
-import MenuSelect from "../../../components/menu/MenuSelect";
+import MenuLike from "../../../components/menu/MenuLike";
 // Style
 import { ProductPage } from "../../../styles/pages/ProductPage";
 // Type
@@ -21,7 +21,7 @@ const CheeseProduct = ({ cheese }: { cheese: ProductType }) => {
         summary={cheese.summary}
       />
 
-      <MenuSelect
+      <MenuLike
         title="cheese"
         name={cheese.name}
         eng={cheese.eng_name}
