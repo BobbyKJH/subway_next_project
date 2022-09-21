@@ -8,9 +8,10 @@ interface Type {
   bread: string;
   cheese: string;
   sauce: string[];
+  kcal: number;
 }
 
-const Result = ({ name, eng, sandwich, bread, cheese, sauce }: Type) => (
+const Result = ({ name, eng, sandwich, bread, cheese, sauce, kcal }: Type) => (
   <>
     <img src={sandwich} alt={sandwich} />
 
@@ -27,6 +28,7 @@ const Result = ({ name, eng, sandwich, bread, cheese, sauce }: Type) => (
           <p key={idx}>{sauce}</p>
         ))}
       </div>
+      <p>{kcal} kcal</p>
     </div>
   </>
 );
