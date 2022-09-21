@@ -14,6 +14,7 @@ const ResultPage = () => {
       bread={result.bread}
       cheese={result.cheese}
       sauce={result.sauce}
+      kcal={result.kcal}
     />
   );
 };

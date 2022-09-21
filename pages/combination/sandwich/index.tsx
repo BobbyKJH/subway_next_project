@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 // Redux
 import { useAppDispatch } from "../../../store/hooks";
 import {
-  selectEng,
+  sandwichKcal,
   selectName,
   selectSandwich,
 } from "../../../store/recipeSlice";
@@ -29,8 +29,8 @@ const Sandwich = ({ sandwich }: { sandwich: MapType }) => {
   const SandwichMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { value, name, id } = e.currentTarget;
     dispatch(selectName(name));
-    dispatch(selectSandwich(value));
-    dispatch(selectEng(id));
+    dispatch(selectSandwich(id));
+    dispatch(sandwichKcal(value));
     router.push("/combination/bread");
   };
 
@@ -43,9 +43,9 @@ const Sandwich = ({ sandwich }: { sandwich: MapType }) => {
       {sandwich.map((item: ProductType) => (
         <CombinationButton
           onClick={SandwichMenu}
-          value={item.img}
+          id={item.img}
           name={item.name}
-          id={item.eng_name}
+          value={item.calorie}
           key={item.id}
         >
           {/* 카드 */}

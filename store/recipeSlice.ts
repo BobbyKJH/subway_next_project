@@ -10,8 +10,11 @@ const initialState: StringType = {
   name: "",
   eng: "",
   sandwich: "",
+  sandwichCalorie: "",
   bread: "",
+  breadCalorie: "",
   cheese: "",
+  cheeseCalorie: "",
 };
 
 export const counterSlice = createSlice({
@@ -27,11 +30,20 @@ export const counterSlice = createSlice({
     selectSandwich: (state, action: PayloadAction<string>) => {
       state.sandwich = action.payload;
     },
+    sandwichKcal: (state, action: PayloadAction<string>) => {
+      state.sandwichCalorie = action.payload;
+    },
     selectBread: (state, action: PayloadAction<string>) => {
       state.bread = action.payload;
     },
+    breadKcal: (state, action: PayloadAction<string>) => {
+      state.breadCalorie = action.payload;
+    },
     selectCheese: (state, action: PayloadAction<string>) => {
       state.cheese = action.payload;
+    },
+    cheeseKcal: (state, action: PayloadAction<string>) => {
+      state.cheeseCalorie = action.payload;
     },
   },
 });
@@ -40,8 +52,11 @@ export const {
   selectName,
   selectEng,
   selectSandwich,
+  sandwichKcal,
   selectBread,
+  breadKcal,
   selectCheese,
+  cheeseKcal,
 } = counterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
