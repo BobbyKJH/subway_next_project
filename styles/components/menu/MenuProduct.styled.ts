@@ -14,8 +14,9 @@ export const ProductName = styled.div`
     font-weight: 900;
   }
   .eng {
-    font-size: 0.8rem;
-    color: #009000;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #ffa300;
   }
 `;
 
@@ -29,6 +30,17 @@ export const ProductSummary = styled.span`
 
 export const ProductKcal = styled.span`
   display: block;
-  width: 100%;
   text-align: center;
+  font-size: 1rem;
+`;
+
+export const ProductLike = styled.button`
+  display: block;
+  margin: 1rem auto;
+  border: 5px outset #009000;
+  padding: 0.2rem 5rem;
+  width: 100px;
+  :active {
+    border: 5px inset #009000;
+  }
 `;
