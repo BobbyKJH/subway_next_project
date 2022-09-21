@@ -1,6 +1,7 @@
 // React
 import React from "react";
 import { useRouter } from "next/router";
+import { ProductLike } from "../../styles/components/menu/MenuProduct.styled";
 // Style
 
 interface MenuSelectType {
@@ -12,7 +13,7 @@ interface MenuSelectType {
   calorie: number;
 }
 
-const MenuSelect = ({
+const MenuLike = ({
   title,
   name,
   eng,
@@ -40,14 +41,14 @@ const MenuSelect = ({
   };
 
   return (
-    <button onClick={Like}>
+    <ProductLike onClick={Like}>
       {check !== null && check.name === name ? (
         <span>❤️</span>
       ) : (
         <span>🖤</span>
       )}
-    </button>
+    </ProductLike>
   );
 };
 
-export default MenuSelect;
+export default MenuLike;
