@@ -14,11 +14,15 @@ import { CombinationButton } from "../../../styles/components/combination/MenuCo
 import { MapType, ProductType } from "../../../utils/type";
 
 const Sauce = ({ sauce }: { sauce: MapType }) => {
-  const [arr, setArr] = useState<never[] | string[]>([]);
+  // calroie 이름 및 수치
+  const [arr, setArr] = useState<{ name: string[]; kcal: number[] }>({
+    name: [],
+    kcal: [0],
+  });
 
   const SauceMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const { value } = e.currentTarget;
-    setArr([value, ...arr]);
+    const { value, name } = e.currentTarget;
+    setArr({ name: [name, ...arr.name], kcal: [Number(value), ...arr.kcal] });
   };
 
   return (
@@ -29,7 +33,12 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
       </CombinationTitle>
 
       {sauce.map((item: ProductType) => (
-        <CombinationButton onClick={SauceMenu} value={item.name} key={item.id}>
+        <CombinationButton
+          onClick={SauceMenu}
+          name={item.name}
+          value={item.calorie}
+          key={item.id}
+        >
           {/* 카드 */}
           <MenuComination
             img={item.img}
@@ -41,7 +50,7 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
       ))}
 
       {/* 메뉴 선택 리스트 */}
-      <MenuList sauce={arr} />
+      <MenuList sauce={arr.name.slice(0, 3)} sauceKcal={arr.kcal} />
       {/* 메뉴 리스트 완성 버튼 */}
     </CombinationPage>
   );

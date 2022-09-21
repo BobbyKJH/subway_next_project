@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/router";
 // Redux
 import { useAppDispatch } from "../../../store/hooks";
-import { selectBread } from "../../../store/recipeSlice";
+import { breadKcal, selectBread } from "../../../store/recipeSlice";
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
@@ -22,8 +22,9 @@ const Bread = ({ bread }: { bread: MapType }) => {
   const dispatch = useAppDispatch();
 
   const BreadMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const { value } = e.currentTarget;
-    dispatch(selectBread(value));
+    const { value, name } = e.currentTarget;
+    dispatch(selectBread(name));
+    dispatch(breadKcal(value));
     router.push("/combination/cheese");
   };
 
@@ -34,7 +35,12 @@ const Bread = ({ bread }: { bread: MapType }) => {
       </CombinationTitle>
 
       {bread.map((item: ProductType) => (
-        <CombinationButton onClick={BreadMenu} value={item.name} key={item.id}>
+        <CombinationButton
+          onClick={BreadMenu}
+          name={item.name}
+          value={item.calorie}
+          key={item.id}
+        >
           {/* 카드 */}
           <MenuComination
             img={item.img}
