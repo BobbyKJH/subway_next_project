@@ -7,10 +7,27 @@ import { selectMenu } from "../../store/recipeSlice";
 // Style
 import { RecipeButton } from "../../styles/components/combination/RecipeBtn.styled";
 
-const RecipeBtn = ({ arr }: { arr: string[] | any }) => {
+const RecipeBtn = ({
+  sauce,
+  sauceKcal,
+}: {
+  sauce: string[] | any;
+  sauceKcal: number[] | any;
+}) => {
   const router = useRouter();
   const select = useAppSelector(selectMenu);
 
+  // 소스 Kcal 합산
+  const sum = sauceKcal.slice(0, 3).reduce((a: number, b: number) => a + b);
+
+  // 총 Kcal 합산
+  const Kcal =
+    sum +
+    Number(select.sandwichCalorie) +
+    Number(select.breadCalorie) +
+    Number(select.cheeseCalorie);
+
+  // 완성 storage 저장
   const Result = (e: React.MouseEvent<HTMLButtonElement>) => {
     localStorage.setItem(
       "recipe",
@@ -18,9 +35,10 @@ const RecipeBtn = ({ arr }: { arr: string[] | any }) => {
         name: select.name,
         eng: select.eng,
         sandwich: select.sandwich,
+        kcal: Kcal,
         bread: select.bread,
         cheese: select.cheese,
-        sauce: arr.slice(0, 3),
+        sauce: sauce.slice(0, 3),
       })
     );
     router.push("/combination/result");
