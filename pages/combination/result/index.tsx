@@ -9,7 +9,6 @@ const ResultPage = () => {
   return (
     <Result
       name={result.name}
-      eng={result.eng}
       sandwich={result.sandwich}
       bread={result.bread}
       cheese={result.cheese}
