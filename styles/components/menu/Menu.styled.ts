@@ -21,6 +21,10 @@ export const MenuBox = styled.div`
     display: flex;
     margin: 0 auto 2.5rem auto;
   }
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 0 0 #00000090;
@@ -50,5 +54,15 @@ export const MenuName = styled.div`
   }
   @media (max-width: 54rem) {
     margin: auto;
+  }
+  @media (max-width: 500px) {
+    margin: auto;
+    width: 50%;
+    .name {
+      font-size: 10px;
+    }
+    .eng {
+      font-size: 0.5em;
+    }
   }
 `;
