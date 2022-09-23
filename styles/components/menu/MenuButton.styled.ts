@@ -6,15 +6,19 @@ export const MenuButtonBox = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
   background-color: #fff;
   a {
     background-color: #ffea00;
     color: #009000;
-    padding: 1rem 1rem;
-    width: 80px;
+    box-sizing: border-box;
+    border: 10px outset #fff;
+    padding: 1rem;
+    width: 20%;
   }
   .active {
+    box-sizing: border-box;
+    border: 10px inset #fff;
     background-color: #009000;
     color: #ffea00;
     font-weight: 900;
