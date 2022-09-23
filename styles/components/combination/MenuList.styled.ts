@@ -1,20 +1,26 @@
 import styled from "styled-components";
 
-export const MenuListBox = styled.div<{ height: number }>`
+// 전체 박스
+export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   box-sizing: border-box;
   margin: 0 auto;
   position: fixed;
   transition: height 0.5s ease-in;
-  bottom: 0;
+  bottom: ${(props) => (props.bottom ? 0 : "56px")};
   width: 72rem;
   padding: 1rem 1rem 0 1rem;
+  border: 3px solid #000;
+  border-bottom: none;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
   height: ${(props) => `${props.height}rem`};
   background-color: #fff;
   @media (max-width: 72rem) {
     width: 54rem;
   }
   @media (max-width: 54rem) {
-    width: 36rem;
+    width: 100%;
   }
 `;
 
@@ -44,12 +50,22 @@ export const MenuListName = styled.span`
   }
 `;
 // 빵 이름
-export const MenuListBread = styled.p`
-  display: inline-block;
+export const MenuListBread = styled.div`
+  display: inline-flex;
   box-sizing: border-box;
+  justify-content: space-between;
+  padding: 2rem 2rem 0 2rem;
   text-align: center;
   width: 50%;
   font-size: 0.9rem;
+  span {
+    display: inline-block;
+  }
+  .arrow {
+    ::after {
+      content: "➡️";
+    }
+  }
 `;
 export const MenuListCheese = styled(MenuListBread)``;
 

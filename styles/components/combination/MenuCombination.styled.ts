@@ -17,7 +17,7 @@ export const CombinationButton = styled.button`
     width: 25rem;
   }
   @media (max-width: 54rem) {
-    width: 32rem;
+    width: 90%;
     display: flex;
     margin: 0 auto 2.5rem auto;
   }
@@ -41,22 +41,35 @@ export const CombinationContent = styled.div`
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  line-height: 30px;
+  line-height: 24px;
   margin: auto;
   .name {
     display: block;
     font-size: 1rem;
+    font-weight: 900;
   }
   .eng {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: #ffa500;
-    margin: 0 0 0 0;
   }
   .calorie {
     display: block;
-    margin: 0 0 0.5rem 0;
-    @media (max-width: 54rem) {
-      margin: 1rem 0 0 0;
+    margin: 0.8rem 0 0.8rem 0;
+    font-size: 0.7rem;
+  }
+  @media (max-width: 54rem) {
+    margin: auto;
+    .calorie {
+      margin: 2rem 0 0 0;
+    }
+  }
+  @media (max-width: 35rem) {
+    margin: auto;
+    .name {
+      font-size: 0.8rem;
+    }
+    .eng {
+      font-size: 0.3rem;
     }
   }
 `;
