@@ -6,6 +6,7 @@ import { useAppSelector } from "../../store/hooks";
 import { selectMenu } from "../../store/recipeSlice";
 // Component
 import RecipeBtn from "./RecipeBtn";
+import List from "./List";
 // Style
 import {
   ComplecationBtn,
@@ -27,6 +28,7 @@ const MenuList = ({
 }) => {
   const router = useRouter();
   const [open, setOpen] = useState(5);
+  const [bottom, setBottom] = useState(true);
   const select = useAppSelector(selectMenu);
 
   // 선택 메뉴 보기
@@ -35,6 +37,14 @@ const MenuList = ({
       setOpen(30);
     } else {
       setOpen(5);
+    }
+  };
+
+  const BottomLocation = () => {
+    if (window.innerWidth <= 1000) {
+      setBottom(false);
+    } else {
+      setBottom(true);
     }
   };
 
@@ -52,8 +62,18 @@ const MenuList = ({
     }
   }, [sauce]);
 
+  useEffect(() => {
+    if (window.innerWidth <= 1000) {
+      setBottom(false);
+    }
+    addEventListener("resize", BottomLocation);
+    return () => {
+      removeEventListener("resize", BottomLocation);
+    };
+  }, []);
+
   return (
-    <MenuListBox height={open}>
+    <MenuListBox height={open} bottom={bottom}>
       <ComplecationBtn onClick={OpenMenu}>
         {open > 5 ? <>닫기</> : <>열기</>}
       </ComplecationBtn>
@@ -62,19 +82,22 @@ const MenuList = ({
 
       <MenuListName>
         <span>{select.name}</span>
-        <p>{select.eng}</p>
       </MenuListName>
 
-      <MenuListBread>{select.bread}</MenuListBread>
+      <MenuListBread>
+        <List name="빵" menu={select.bread} />
+      </MenuListBread>
 
-      <MenuListCheese>{select.cheese}</MenuListCheese>
+      <MenuListCheese>
+        <List name="치즈" menu={select.cheese} />
+      </MenuListCheese>
 
       <MenuListSauce
         width={sauce?.length === undefined ? 1 : sauce?.slice(0, 3).length}
       >
         {sauce?.slice(0, 3).map((list, idx) => (
           <p className="sauce" key={idx}>
-            {list}
+            {idx + 1}. {list}
           </p>
         ))}
       </MenuListSauce>
