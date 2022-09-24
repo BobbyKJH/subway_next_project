@@ -32,7 +32,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("resize", MobileMode);
     };
-  }, []);
+  }, [mode]);
 
   return (
     <>

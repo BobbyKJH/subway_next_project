@@ -64,7 +64,7 @@ export const MobileHeaderStyle = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  min-width: 36rem;
+  min-width: 500px;
   background-color: #009000;
 `;
 
