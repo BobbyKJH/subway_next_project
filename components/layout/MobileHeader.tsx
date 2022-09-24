@@ -8,7 +8,11 @@ import {
   MobileNav,
   MobileTitle,
   MobileHeaderBox,
+  MobileButton,
 } from "../../styles/layout/Header.styled";
+// Image
+import Image from "next/image";
+import arrow from "../../img/arrow.png";
 
 const MobileHeader = () => {
   const router = useRouter();
@@ -35,7 +39,15 @@ const MobileHeader = () => {
         <Link href={`/`}>
           <MobileTitle onClick={closeNav}>My Subway</MobileTitle>
         </Link>
-        <button onClick={openNav}>열기</button>
+        <MobileButton onClick={openNav} turn={nav}>
+          <Image
+            src={arrow}
+            alt="open"
+            className="arrow"
+            width={20}
+            height={20}
+          />
+        </MobileButton>
       </MobileHeaderBox>
 
       {/* Nav 창 */}

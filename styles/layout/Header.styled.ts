@@ -64,7 +64,6 @@ export const MobileHeaderStyle = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  min-width: 500px;
   background-color: #009000;
 `;
 
@@ -84,6 +83,18 @@ export const MobileTitle = styled.button`
   border: none;
   background-color: inherit;
   color: #ffce23;
+`;
+
+export const MobileButton = styled.button<{ turn: boolean }>`
+  background-color: #fff;
+  border: none;
+  .arrow {
+    transition: 0.5s;
+    transform: ${(props) => (props.turn ? "rotate(180deg)" : "rotate(0deg)")};
+    img {
+      width: 20px;
+    }
+  }
 `;
 
 export const MobileNav = styled.div`

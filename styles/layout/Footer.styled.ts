@@ -5,18 +5,20 @@ export const MobileFooterStyle = styled.div`
   box-sizing: border-box;
   bottom: 0;
   width: 100%;
+  max-height: 61px;
   .active {
-    border: 5px inset #808080;
+    border: 10px inset #fff;
   }
 `;
 
 export const MobileFooterBox = styled.div`
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  text-align: center;
   background-color: #fff;
-  border: 5px outset #808080;
-  padding: 1rem 0;
+  border: 10px outset #808080;
   width: 25%;
+  height: 61px;
 `;
