@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
-// 조합 페이지의 배경 및 크기 (반응형)
+// 조합 페이지의 배경 및 크기
 export const CombinationPage = styled.div`
   display: block;
   margin: 0 auto;
   width: 72rem;
-  padding: 0 0 5rem 0;
-  background-color: #ffea50;
+  padding: 0 0 7rem 0;
   @media (max-width: 72rem) {
     width: 54rem;
   }
   @media (max-width: 54rem) {
-    width: 36rem;
+    width: 100%;
   }
 `;
 
@@ -20,7 +19,7 @@ export const CombinationPage = styled.div`
 export const CombinationTitle = styled.strong`
   display: block;
   text-align: center;
-  color: #009000;
+  color: #000;
   padding: 2rem 0 1rem 0;
   margin: 0 0 1rem 0;
 
