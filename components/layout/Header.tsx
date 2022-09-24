@@ -5,7 +5,11 @@ import React, { useEffect, useState } from "react";
 // Component
 import MobileHeader from "./MobileHeader";
 // Style
-import { HeaderNav, HeaderStyle, HeaderTitle } from "../styles/Header.styled";
+import {
+  HeaderNav,
+  HeaderStyle,
+  HeaderTitle,
+} from "../../styles/layout/Header.styled";
 
 const Header = () => {
   const router = useRouter();

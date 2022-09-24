@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 // Style
 import {
-  MobileHeaderBox,
   MobileHeaderStyle,
   MobileNav,
   MobileTitle,
-} from "../styles/Header.styled";
+  MobileHeaderBox,
+} from "../../styles/layout/Header.styled";
 
 const MobileHeader = () => {
   const router = useRouter();
