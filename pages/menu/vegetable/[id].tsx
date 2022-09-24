@@ -4,7 +4,7 @@ import axios from "axios";
 //Component
 import MenuProduct from "../../../components/menu/MenuProduct";
 // Style
-import { ProductPage } from "../../../styles/pages/ProductPage";
+import { ProductPage } from "../../../styles/pages/ProductPage.styled";
 // Type
 import { ProductType } from "../../../utils/type";
 import { GetStaticPropsContext } from "next";
