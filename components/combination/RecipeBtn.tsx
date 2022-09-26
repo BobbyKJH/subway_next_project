@@ -37,7 +37,9 @@ const RecipeBtn = ({
         sandwich: select.sandwich,
         kcal: Kcal,
         bread: select.bread,
+        breadImg: select.breadImg,
         cheese: select.cheese,
+        cheeseImg: select.cheeseImg,
         sauce: sauce.slice(0, 3),
       })
     );
