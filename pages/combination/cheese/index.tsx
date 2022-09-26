@@ -4,7 +4,11 @@ import React from "react";
 import { useRouter } from "next/router";
 // Redux
 import { useAppDispatch } from "../../../store/hooks";
-import { cheeseKcal, selectCheese } from "../../../store/recipeSlice";
+import {
+  cheeseImage,
+  cheeseKcal,
+  selectCheese,
+} from "../../../store/recipeSlice";
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
@@ -22,9 +26,10 @@ const Cheese = ({ cheese }: { cheese: MapType }) => {
   const router = useRouter();
 
   const SandwichMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const { value, name } = e.currentTarget;
+    const { value, name, id } = e.currentTarget;
     dispatch(selectCheese(name));
     dispatch(cheeseKcal(value));
+    dispatch(cheeseImage(id));
     router.push("/combination/sauce");
   };
 
@@ -39,6 +44,7 @@ const Cheese = ({ cheese }: { cheese: MapType }) => {
           onClick={SandwichMenu}
           name={item.name}
           value={item.calorie}
+          id={item.img}
           key={item.id}
         >
           {/* 카드 */}

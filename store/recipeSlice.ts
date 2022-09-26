@@ -12,8 +12,10 @@ const initialState: StringType = {
   sandwich: "",
   sandwichCalorie: "",
   bread: "",
+  breadImg: "",
   breadCalorie: "",
   cheese: "",
+  cheeseImg: "",
   cheeseCalorie: "",
 };
 
@@ -39,11 +41,17 @@ export const counterSlice = createSlice({
     breadKcal: (state, action: PayloadAction<string>) => {
       state.breadCalorie = action.payload;
     },
+    breadImage: (state, action: PayloadAction<string>) => {
+      state.breadImg = action.payload;
+    },
     selectCheese: (state, action: PayloadAction<string>) => {
       state.cheese = action.payload;
     },
     cheeseKcal: (state, action: PayloadAction<string>) => {
       state.cheeseCalorie = action.payload;
+    },
+    cheeseImage: (state, action: PayloadAction<string>) => {
+      state.cheeseImg = action.payload;
     },
   },
 });
@@ -54,8 +62,10 @@ export const {
   selectSandwich,
   sandwichKcal,
   selectBread,
+  breadImage,
   breadKcal,
   selectCheese,
+  cheeseImage,
   cheeseKcal,
 } = counterSlice.actions;
 
