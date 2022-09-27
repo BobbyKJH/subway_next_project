@@ -3,13 +3,13 @@ import React from "react";
 // Tyoe
 import { StringType } from "../../utils/type";
 
-const List = ({ name, menu }: StringType) => (
+const List = ({ name, image, menu }: StringType) => (
   <>
     {menu && (
       <>
         <span>{name}</span>
 
-        <div className="arrow" />
+        {image && <img src={image} alt={name} />}
 
         <p>{menu}</p>
       </>

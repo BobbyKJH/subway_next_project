@@ -10,22 +10,27 @@ import { RecipeButton } from "../../styles/components/combination/RecipeBtn.styl
 const RecipeBtn = ({
   sauce,
   sauceKcal,
+  sauceImage,
 }: {
-  sauce: string[] | any;
-  sauceKcal: number[] | any;
+  sauce?: string[];
+  sauceKcal?: number[];
+  sauceImage?: string[];
 }) => {
   const router = useRouter();
   const select = useAppSelector(selectMenu);
 
   // 소스 Kcal 합산
-  const sum = sauceKcal.slice(0, 3).reduce((a: number, b: number) => a + b);
+  const sum = sauceKcal
+    ? sauceKcal.slice(0, 3).reduce((a: number, b: number) => a + b)
+    : null;
 
   // 총 Kcal 합산
-  const Kcal =
-    sum +
-    Number(select.sandwichCalorie) +
-    Number(select.breadCalorie) +
-    Number(select.cheeseCalorie);
+  const Kcal = sum
+    ? sum +
+      Number(select.sandwichCalorie) +
+      Number(select.breadCalorie) +
+      Number(select.cheeseCalorie)
+    : null;
 
   // 완성 storage 저장
   const Result = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,14 +38,14 @@ const RecipeBtn = ({
       "recipe",
       JSON.stringify({
         name: select.name,
-        eng: select.eng,
         sandwich: select.sandwich,
         kcal: Kcal,
         bread: select.bread,
         breadImg: select.breadImg,
         cheese: select.cheese,
         cheeseImg: select.cheeseImg,
-        sauce: sauce.slice(0, 3),
+        sauce: sauce,
+        sauceImg: sauceImage,
       })
     );
     router.push("/combination/result");

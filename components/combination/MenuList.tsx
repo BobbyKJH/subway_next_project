@@ -11,32 +11,32 @@ import List from "./List";
 import {
   ComplecationBtn,
   MenuListBox,
-  MenuListBread,
-  MenuListCheese,
+  MenuListMaterial,
   MenuListName,
-  MenuListSauce,
   SandwichImg,
 } from "../../styles/components/combination/MenuList.styled";
 
 const MenuList = ({
   sauce,
   sauceKcal,
+  sauceImage,
 }: {
   sauce?: string[];
   // 소스 칼로리
   sauceKcal?: number[];
+  sauceImage: string[];
 }) => {
   const router = useRouter();
-  const [open, setOpen] = useState(5);
+  const [open, setOpen] = useState(10);
   const [bottom, setBottom] = useState(true);
   const select = useAppSelector(selectMenu);
 
   // 선택 메뉴 보기
   const OpenMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (open === 5) {
-      setOpen(30);
+    if (open === 10) {
+      setOpen(65);
     } else {
-      setOpen(5);
+      setOpen(10);
     }
   };
 
@@ -58,7 +58,7 @@ const MenuList = ({
   // 소스 3개 선택시 올라오는 효과
   useEffect(() => {
     if (sauce?.length === 3) {
-      setOpen(30);
+      setOpen(65);
     }
   }, [sauce]);
 
@@ -75,7 +75,7 @@ const MenuList = ({
   return (
     <MenuListBox height={open} bottom={bottom}>
       <ComplecationBtn onClick={OpenMenu}>
-        {open > 5 ? <>닫기</> : <>열기</>}
+        {open > 10 ? <>닫기</> : <>열기</>}
       </ComplecationBtn>
 
       <SandwichImg src={select.sandwich} alt={select.name} />
@@ -84,26 +84,36 @@ const MenuList = ({
         <span>{select.name}</span>
       </MenuListName>
 
-      <MenuListBread>
+      <MenuListMaterial>
         <List name="빵" menu={select.bread} />
-      </MenuListBread>
+      </MenuListMaterial>
 
-      <MenuListCheese>
+      <MenuListMaterial>
         <List name="치즈" menu={select.cheese} />
-      </MenuListCheese>
+      </MenuListMaterial>
 
-      <MenuListSauce
-        width={sauce?.length === undefined ? 1 : sauce?.slice(0, 3).length}
-      >
-        {sauce?.slice(0, 3).map((list, idx) => (
-          <p className="sauce" key={idx}>
-            {idx + 1}. {list}
-          </p>
-        ))}
-      </MenuListSauce>
+      <MenuListMaterial>
+        {sauce?.length ? (
+          <>
+            <span>소스</span>
+
+            <div>
+              {sauce?.slice(0, 3).map((list, idx) => (
+                <p className="sauce" key={idx}>
+                  {list}
+                </p>
+              ))}
+            </div>
+          </>
+        ) : null}
+      </MenuListMaterial>
 
       {router.pathname.includes("/sauce") && (
-        <RecipeBtn sauce={sauce} sauceKcal={sauceKcal} />
+        <RecipeBtn
+          sauce={sauce}
+          sauceKcal={sauceKcal}
+          sauceImage={sauceImage}
+        />
       )}
     </MenuListBox>
   );
