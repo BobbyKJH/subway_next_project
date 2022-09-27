@@ -14,7 +14,7 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 
-  height: ${(props) => `${props.height}rem`};
+  height: ${(props) => `${props.height}%`};
   background-color: #fff;
   @media (max-width: 72rem) {
     width: 54rem;
@@ -33,7 +33,10 @@ export const ComplecationBtn = styled.button`
 export const SandwichImg = styled.img`
   display: block;
   margin: 0 auto;
-  width: 350px;
+  width: 15rem;
+  @media (max-width: 500px) {
+    width: 75%;
+  }
 `;
 // 샌드위치 이름
 export const MenuListName = styled.span`
@@ -41,7 +44,7 @@ export const MenuListName = styled.span`
   text-align: center;
   line-height: 30px;
   span {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 900;
   }
   p {
@@ -50,35 +53,27 @@ export const MenuListName = styled.span`
   }
 `;
 // 빵 이름
-export const MenuListBread = styled.div`
-  display: inline-flex;
+export const MenuListMaterial = styled.div`
+  display: inline-block;
+  margin: 20px auto 0 auto;
   box-sizing: border-box;
-  justify-content: space-between;
-  padding: 2rem 2rem 0 2rem;
-  text-align: center;
-  width: 50%;
-  font-size: 0.9rem;
-  span {
-    display: inline-block;
-  }
-  .arrow {
-    ::after {
-      content: "➡️";
-    }
-  }
-`;
-export const MenuListCheese = styled(MenuListBread)``;
-
-export const MenuListSauce = styled.span<{ width: number }>`
-  display: block;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 1rem 0;
-  min-height: 58px;
   font-size: 0.8rem;
-  .sauce {
-    display: inline-block;
-    text-align: center;
-    width: ${(props) => 100 / props.width}%;
+  width: 50%;
+  span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  div {
+    text-align: right;
+  }
+  p {
+    margin: 0 0 5px 0;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    span {
+      font-size: 0.8rem;
+    }
   }
 `;
