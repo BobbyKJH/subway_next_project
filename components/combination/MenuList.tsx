@@ -24,7 +24,7 @@ const MenuList = ({
   sauce?: string[];
   // 소스 칼로리
   sauceKcal?: number[];
-  sauceImage: string[];
+  sauceImage?: string[];
 }) => {
   const router = useRouter();
   const [open, setOpen] = useState(10);
