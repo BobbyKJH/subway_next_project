@@ -11,8 +11,11 @@ const ResultPage = () => {
       name={result.name}
       sandwich={result.sandwich}
       bread={result.bread}
+      breadImage={result.breadImg}
       cheese={result.cheese}
+      cheeseImage={result.cheeseImg}
       sauce={result.sauce}
+      sauceImage={result.sauceImg}
       kcal={result.kcal}
     />
   );
