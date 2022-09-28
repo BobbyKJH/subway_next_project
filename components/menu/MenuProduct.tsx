@@ -1,6 +1,12 @@
 // React
 import React from "react";
 // Style
+import {
+  ProductImg,
+  ProductKcal,
+  ProductName,
+  ProductSummary,
+} from "../../styles/components/menu/MenuProduct.styled";
 
 interface MenuProductType {
   name: string;
@@ -13,16 +19,16 @@ interface MenuProductType {
 const MenuProduct = ({ name, eng, img, calorie, summary }: MenuProductType) => {
   return (
     <>
-      <div>
+      <ProductImg src={img} alt={name} />
+
+      <ProductName>
         <span className="name">{name}</span>
         <p className="eng">{eng}</p>
-      </div>
+      </ProductName>
 
-      <img src={img} alt={name} />
+      <ProductSummary className="summary">{summary}</ProductSummary>
 
-      <span className="summary">{summary}</span>
-
-      <p className="calorie">{calorie} kcal</p>
+      <ProductKcal className="calorie">{calorie} kcal</ProductKcal>
     </>
   );
 };
