@@ -8,4 +8,8 @@ export const ProductPage = styled.div`
   @media (max-width: 1000px) {
     width: 25rem;
   }
+  @media (max-width: 700px) {
+    margin: 1.5rem auto;
+    width: 100%;
+  }
 `;
