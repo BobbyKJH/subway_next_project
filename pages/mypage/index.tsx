@@ -7,6 +7,7 @@ import MyRecipe from "../../components/mypage/MyRecipe";
 const MyPage = () => {
   return (
     <div>
+      <MyRecipe />
       <FavoriteCollection />
     </div>
   );
