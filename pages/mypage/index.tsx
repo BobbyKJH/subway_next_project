@@ -28,13 +28,14 @@ const MyPage = () => {
 
       {recipe && <MyRecipe />}
 
+      {/* 
       <ListButton onClick={LikeButton} arrow={like}>
         <p>▼ </p>
         <span> 베스트 메뉴 </span>
         <p> ▼</p>
       </ListButton>
 
-      {like && <FavoriteCollection />}
+      {like && <FavoriteCollection />} */}
     </>
   );
 };
