@@ -1,21 +1,40 @@
 // React
-import React from "react";
+import React, { useState } from "react";
 // Component
-import LinkMenu from "../../components/mypage/LikeMenu";
+import FavoriteCollection from "../../components/mypage/FavoriteCollection";
 import MyRecipe from "../../components/mypage/MyRecipe";
+// Style
+import { ListButton } from "../../styles/pages/MyPage.styled";
 
 const MyPage = () => {
+  const [recipe, setRecipe] = useState(true);
+  const [like, setLike] = useState(false);
+
+  const RecipeButton = () => {
+    setRecipe(!recipe);
+  };
+
+  const LikeButton = () => {
+    setLike(!like);
+  };
+
   return (
     <>
-      <MyRecipe />
+      <ListButton onClick={RecipeButton} arrow={recipe}>
+        <p>▼ </p>
+        <span> 나만의 레시피 </span>
+        <p> ▼</p>
+      </ListButton>
 
-      <LinkMenu title="sandwich" select="샌드위치" />
+      {recipe && <MyRecipe />}
 
-      <LinkMenu title="bread" select="빵" />
+      <ListButton onClick={LikeButton} arrow={like}>
+        <p>▼ </p>
+        <span> 베스트 메뉴 </span>
+        <p> ▼</p>
+      </ListButton>
 
-      <LinkMenu title="cheese" select="치즈" />
-
-      <LinkMenu title="sauce" select="소스" />
+      {like && <FavoriteCollection />}
     </>
   );
 };
