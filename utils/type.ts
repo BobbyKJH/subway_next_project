@@ -20,7 +20,7 @@ export interface ProductType {
 export interface MenuType {
   img: string;
   name: string;
-  eng: string;
+  eng?: string;
   summary?: string;
   calorie: number;
 }
