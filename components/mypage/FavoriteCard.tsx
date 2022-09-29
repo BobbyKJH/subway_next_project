@@ -1,23 +1,31 @@
 // React
 import React from "react";
 // Style
+import {
+  FavoriteCardCalorie,
+  FavoriteCardSummary,
+  FavoriteCardTitle,
+  FavoriteMenuImg,
+} from "../../styles/components/mypage/FavoriteCard.styled";
 // Type
 import { MenuType } from "../../utils/type";
 
-const LikeCard = ({ img, name, eng, summary, calorie }: MenuType) => {
+const FavoriteCard = ({ img, name, summary, calorie }: MenuType) => {
   return (
     <>
-      <img src={img} alt={name} />
+      <FavoriteMenuImg src={img} alt={name} />
 
-      <span>{name}</span>
+      <FavoriteCardTitle>{name}</FavoriteCardTitle>
 
-      <p>{eng}</p>
+      {summary ? (
+        <FavoriteCardSummary>{summary}</FavoriteCardSummary>
+      ) : (
+        <FavoriteCardSummary />
+      )}
 
-      <p>{summary}</p>
-
-      <p>{calorie}</p>
+      <FavoriteCardCalorie>{calorie} Kcal</FavoriteCardCalorie>
     </>
   );
 };
 
-export default LikeCard;
+export default FavoriteCard;

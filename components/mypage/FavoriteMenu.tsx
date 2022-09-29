@@ -1,27 +1,27 @@
 // React
 import React from "react";
+import { FavoriteMenuStyle } from "../../styles/components/mypage/FavoriteMenu.styled";
 // Component
-import LinkCard from "./LikeCard";
+import FavoriteCard from "./FavoriteCard";
 
-const LikeMenu = ({ title, select }: { title: string; select: string }) => {
+const FavoriteMenu = ({ title, select }: { title: string; select: string }) => {
   const menu = JSON.parse(localStorage.getItem(`${title}`) as string);
 
   return (
-    <>
-      <span>{select}</span>
+    <FavoriteMenuStyle>
+      <span className="menu">{select}</span>
       {menu ? (
-        <LinkCard
+        <FavoriteCard
           img={menu.img}
           name={menu.name}
-          eng={menu.emg_name}
           summary={menu.summary}
           calorie={menu.calorie}
         />
       ) : (
         <p>좋아하는 메뉴를 선택해주세요.</p>
       )}
-    </>
+    </FavoriteMenuStyle>
   );
 };
 
-export default LikeMenu;
+export default FavoriteMenu;
