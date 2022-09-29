@@ -6,9 +6,9 @@ import MyRecipe from "../../components/mypage/MyRecipe";
 
 const MyPage = () => {
   return (
-    <>
-      <MyRecipe />
-    </>
+    <div>
+      <FavoriteCollection />
+    </div>
   );
 };
 
