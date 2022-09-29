@@ -18,7 +18,14 @@ const MyPage = () => {
     setLike(!like);
   };
 
-  return <>11</>;
+  return (
+    <>
+      <ListButton arrow={recipe} onClick={RecipeButton}>
+        나만의 레시피
+      </ListButton>
+      <>{recipe && <MyRecipe />}</>
+    </>
+  );
 };
 
 export default MyPage;
