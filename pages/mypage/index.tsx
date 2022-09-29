@@ -18,26 +18,7 @@ const MyPage = () => {
     setLike(!like);
   };
 
-  return (
-    <>
-      <ListButton onClick={RecipeButton} arrow={recipe}>
-        <p>▼ </p>
-        <span> 나만의 레시피 </span>
-        <p> ▼</p>
-      </ListButton>
-
-      {recipe && <MyRecipe />}
-
-      {/* 
-      <ListButton onClick={LikeButton} arrow={like}>
-        <p>▼ </p>
-        <span> 베스트 메뉴 </span>
-        <p> ▼</p>
-      </ListButton>
-
-      {like && <FavoriteCollection />} */}
-    </>
-  );
+  return <>11</>;
 };
 
 export default MyPage;
