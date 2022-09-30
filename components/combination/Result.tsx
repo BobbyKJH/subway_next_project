@@ -51,7 +51,7 @@ const Result = ({
         <List name="치즈" image={cheeseImage} menu={cheese} />
       </ResultList>
 
-      <ResultSauce display={sauce.length}>
+      <ResultSauce mode={sauce.length}>
         {sauce.length === 0 ? null : <span>소스</span>}
         <div className="image">
           {sauceImage.map((img: string, idx: number) => (

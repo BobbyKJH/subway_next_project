@@ -5,7 +5,6 @@ export const ResultStyle = styled.div`
   background-color: #fff;
   margin: 0 auto;
   width: 40rem;
-  height: 95vh;
   border-radius: 15px;
   @media (max-width: 54rem) {
     width: 70%;
@@ -57,7 +56,8 @@ export const ResultList = styled.div`
     font-weight: 900;
   }
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
   }
   img {
     width: 10rem;
@@ -82,21 +82,24 @@ export const ResultSauce = styled.div`
   display: block;
   box-sizing: border-box;
   text-align: center;
+  margin: 20px 0 0 0;
   span {
     display: block;
     font-size: 1.1rem;
     font-weight: 900;
   }
-  .image {
-    display: block;
+  div {
+    display: ${(props: { display: number }) =>
+      props.display === 3 ? "flex" : "block"};
+    justify-content: space-between;
     margin: 0 auto;
-    width: 90%;
+    width: 99%;
+    align-items: center;
   }
-  .name {
-    display: block;
-  }
+
   img {
-    width: 30%;
+    width: 33%;
+    margin: 10px 0;
   }
   p {
     display: inline-block;
@@ -108,11 +111,13 @@ export const ResultSauce = styled.div`
       font-size: 0.8rem;
     }
     p {
-      font-size: 8px;
+      font-size: 13px;
     }
   }
 `;
 
+// Result Kcal
 export const ResultCalorie = styled.p`
   text-align: center;
+  margin: 30px 0 5rem 0;
 `;
