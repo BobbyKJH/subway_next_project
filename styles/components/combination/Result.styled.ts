@@ -89,8 +89,7 @@ export const ResultSauce = styled.div`
     font-weight: 900;
   }
   div {
-    display: ${(props: { display: number }) =>
-      props.display === 3 ? "flex" : "block"};
+    display: block;
     justify-content: space-between;
     margin: 0 auto;
     width: 99%;
