@@ -10,7 +10,7 @@ import {
   ResultSandwich,
   ResultSauce,
   ResultStyle,
-} from "../../styles/components/combination/Recipe.styled";
+} from "../../styles/components/combination/Result.styled";
 // Utils
 import { AddCommas } from "../../utils/utils";
 
@@ -51,14 +51,14 @@ const Result = ({
         <List name="치즈" image={cheeseImage} menu={cheese} />
       </ResultList>
 
-      <ResultSauce>
-        <span>소스</span>
+      <ResultSauce display={sauce.length}>
+        {sauce.length === 0 ? null : <span>소스</span>}
         <div className="image">
           {sauceImage.map((img: string, idx: number) => (
             <img key={idx} src={img} alt={img} />
           ))}
         </div>
-        <div className="name">
+        <div className="image">
           {sauce.map((sauce: string, idx: number) => (
             <p key={idx}>{sauce}</p>
           ))}
