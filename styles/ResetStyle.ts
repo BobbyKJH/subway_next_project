@@ -25,6 +25,9 @@ time, mark, audio, video {
   font-weight: 700;
   white-space: pre-line;
 }
+img{
+  aspect-ratio: 57/40;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
