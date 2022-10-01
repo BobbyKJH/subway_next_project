@@ -8,6 +8,10 @@ export const FavoriteMenuStyle = styled.div`
     font-size: 1.5rem;
     font-weight: 900;
   }
+  .empty-box {
+    padding: 3rem 0;
+    text-align: center;
+  }
   @media (max-width: 500px) {
     .menu {
       font-size: 1rem;

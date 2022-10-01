@@ -18,7 +18,7 @@ const FavoriteMenu = ({ title, select }: { title: string; select: string }) => {
           calorie={menu.calorie}
         />
       ) : (
-        <p>좋아하는 메뉴를 선택해주세요.</p>
+        <div className="empty-box">좋아하는 메뉴를 선택해주세요.</div>
       )}
     </FavoriteMenuStyle>
   );
