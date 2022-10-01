@@ -1,5 +1,10 @@
 // React
 import React from "react";
+import {
+  RecipeSauceImage,
+  RecipeSauceName,
+  RecipeSauceStyle,
+} from "../../styles/components/mypage/RecipeSauce.styled";
 // Style
 
 const RecipeSauce = ({ title, sauce }: { title?: string; sauce: string[] }) => {
@@ -7,15 +12,15 @@ const RecipeSauce = ({ title, sauce }: { title?: string; sauce: string[] }) => {
   const SauceKind = sauce.find((menu) => menu.includes("https"));
 
   return (
-    <div>
-      <span>{title}</span>
+    <RecipeSauceStyle>
+      {sauce.length ? <span>{title}</span> : null}
 
       {SauceKind ? (
         // 이미지
 
         <>
           {sauce.map((menu, idx) => (
-            <img src={menu} key={idx} />
+            <RecipeSauceImage src={menu} key={idx} />
           ))}
         </>
       ) : (
@@ -23,11 +28,11 @@ const RecipeSauce = ({ title, sauce }: { title?: string; sauce: string[] }) => {
 
         <>
           {sauce.map((menu, idx) => (
-            <p key={idx}>{menu}</p>
+            <RecipeSauceName key={idx}>{menu}</RecipeSauceName>
           ))}
         </>
       )}
-    </div>
+    </RecipeSauceStyle>
   );
 };
 
