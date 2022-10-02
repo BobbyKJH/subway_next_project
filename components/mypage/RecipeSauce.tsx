@@ -18,19 +18,19 @@ const RecipeSauce = ({ title, sauce }: { title?: string; sauce: string[] }) => {
       {SauceKind ? (
         // 이미지
 
-        <>
+        <RecipeSauceImage>
           {sauce.map((menu, idx) => (
-            <RecipeSauceImage src={menu} key={idx} />
+            <img src={menu} key={idx} />
           ))}
-        </>
+        </RecipeSauceImage>
       ) : (
         // 이름
 
-        <>
+        <RecipeSauceName>
           {sauce.map((menu, idx) => (
-            <RecipeSauceName key={idx}>{menu}</RecipeSauceName>
+            <p key={idx}>{menu}</p>
           ))}
-        </>
+        </RecipeSauceName>
       )}
     </RecipeSauceStyle>
   );

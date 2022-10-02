@@ -10,13 +10,35 @@ export const RecipeSauceStyle = styled.div`
   }
 `;
 // 소스 이미지
-export const RecipeSauceImage = styled.img`
+export const RecipeSauceImage = styled.div`
   display: inline-block;
-  width: 30%;
+  img {
+    width: 30%;
+  }
+  @media (max-width: 500px) {
+    img {
+      &:first-child {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
 `;
 
-export const RecipeSauceName = styled.p`
-  display: inline-block;
-  font-size: 0.4rem;
-  width: 30%;
+export const RecipeSauceName = styled.div`
+  font-size: 0.7rem;
+  p {
+    display: inline-block;
+    line-height: 30px;
+    width: 30%;
+  }
+  @media (max-width: 500px) {
+    p {
+      width: 50%;
+      &:first-child {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
 `;
