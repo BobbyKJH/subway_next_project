@@ -1,9 +1,8 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const MyRecipeStyle = styled.div`
   display: block;
   margin: 0 auto;
-  transition: 1s;
   width: 25rem;
   @media (max-width: 500px) {
     width: 100%;
@@ -12,13 +11,10 @@ export const MyRecipeStyle = styled.div`
 
 export const MakeStyle = styled.div`
   text-align: center;
-
-  transition: 1s;
   padding: 3rem 0;
   margin: auto 0;
-  transition: 1s;
   p {
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 `;
 
@@ -26,6 +22,15 @@ export const MakeStyle = styled.div`
 export const MyRecipeSandwich = styled.img`
   display: block;
   width: 100%;
+`;
+// 샌드위치 이름
+export const MyRecipeSandwichName = styled.p`
+  display: block;
+  text-align: center;
+  color: #000;
+  line-height: 30px;
+  font-size: 1.2rem;
+  font-weight: 900;
 `;
 
 // 빵 이름

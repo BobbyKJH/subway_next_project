@@ -17,6 +17,7 @@ export const RecipeListImage = styled.img`
 export const RecipeListTitle = styled.span`
   display: block;
   font-weight: 900;
+  line-height: 30px;
 `;
 
 export const RecipeListName = styled.p`
