@@ -27,11 +27,15 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
 
   const SauceMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { value, name, id } = e.currentTarget;
-    setArr({
-      name: [name, ...arr.name],
-      kcal: [Number(value), ...arr.kcal],
-      img: [id, ...arr.img],
-    });
+    if (arr.name.find((menu) => menu === name)) {
+      return alert("선택 하신 소스 입니다.");
+    } else {
+      return setArr({
+        name: [name, ...arr.name],
+        kcal: [Number(value), ...arr.kcal],
+        img: [id, ...arr.img],
+      });
+    }
   };
 
   return (
