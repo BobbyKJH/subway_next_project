@@ -27,8 +27,8 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
 
   const SauceMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { value, name, id } = e.currentTarget;
-    if (arr.name.find((menu) => menu === name)) {
-      return alert("선택 하신 소스 입니다.");
+    if (arr.name.slice(0, 3).find((menu) => menu === name)) {
+      return alert("이미 선택 하신 소스 입니다.");
     } else {
       return setArr({
         name: [name, ...arr.name],
