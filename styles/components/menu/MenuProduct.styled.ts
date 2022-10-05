@@ -53,7 +53,7 @@ export const ProductKcal = styled.span`
 
 export const ProductLike = styled.button`
   display: block;
-  margin: 1rem auto;
+  margin: 1rem auto 4rem auto;
   border: 5px outset #009000;
   padding: 0.2rem 5rem;
   width: 100px;

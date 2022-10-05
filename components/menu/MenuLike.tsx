@@ -1,8 +1,8 @@
 // React
 import React from "react";
 import { useRouter } from "next/router";
-import { ProductLike } from "../../styles/components/menu/MenuProduct.styled";
 // Style
+import { ProductLike } from "../../styles/components/menu/MenuProduct.styled";
 
 interface MenuSelectType {
   title: string;
