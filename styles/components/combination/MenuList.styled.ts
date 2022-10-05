@@ -6,14 +6,13 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   margin: 0 auto;
   position: fixed;
   transition: height 0.5s ease-in;
-  bottom: ${(props) => (props.bottom ? 0 : "56px")};
+  bottom: ${(props) => (props.bottom ? 0 : "61px")};
   width: 72rem;
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem 0.5rem 0 0.5rem;
   border: 3px solid #000;
   border-bottom: none;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-
   height: ${(props) => `${props.height}%`};
   background-color: #fff;
   @media (max-width: 72rem) {
@@ -35,7 +34,7 @@ export const SandwichImg = styled.img`
   margin: 0 auto;
   width: 15rem;
   @media (max-width: 500px) {
-    width: 75%;
+    width: 60%;
   }
 `;
 // 샌드위치 이름
@@ -43,37 +42,90 @@ export const MenuListName = styled.span`
   display: block;
   text-align: center;
   line-height: 30px;
-  span {
-    font-size: 1rem;
-    font-weight: 900;
-  }
-  p {
+  font-weight: 900;
+  font-size: 1.2rem;
+  .eng {
     font-size: 0.8rem;
-    color: #ffc300;
-  }
-`;
-// 빵 이름
-export const MenuListMaterial = styled.div`
-  display: inline-block;
-  margin: 20px auto 0 auto;
-  box-sizing: border-box;
-  font-size: 0.8rem;
-  width: 50%;
-  span {
-    display: block;
-    font-size: 1rem;
-    font-weight: 900;
-  }
-  div {
-    text-align: right;
-  }
-  p {
-    margin: 0 0 5px 0;
+    color: #ffa500;
   }
   @media (max-width: 500px) {
-    width: 100%;
+    font-size: 1rem;
+    .eng {
+      font-size: 0.6rem;
+    }
+  }
+`;
+
+// 빵 치즈
+export const MenuListIngredient = styled.div`
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+  span {
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 30px;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 8rem;
+  }
+  @media (max-width: 500px) {
     span {
-      font-size: 0.8rem;
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.7rem;
+    }
+    img {
+      width: 50%;
+    }
+  }
+`;
+
+export const MenuListSauce = styled.div`
+  display: block;
+  color: #000;
+  margin: 0 auto 0 auto;
+  span {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    width: 50%;
+    margin: 0 auto 10px auto;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .sauce {
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 30px;
+    width: 20%;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  @media (max-width: 500px) {
+    margin: 10px 0 0 0;
+    div {
+      justify-content: space-between;
+    }
+    span {
+      font-size: 1rem;
+    }
+    .sauce {
+      font-size: 0.7rem;
+      width: 50%;
     }
   }
 `;

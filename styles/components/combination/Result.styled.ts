@@ -30,12 +30,22 @@ export const ResultSandwich = styled.span`
   text-align: center;
   font-size: 1.5rem;
   font-weight: 900;
-  margin: 0 0 20px 0;
+  line-height: 30px;
+  .eng {
+    color: #ffa500;
+    font-size: 1.1rem;
+  }
   @media (max-width: 54rem) {
     font-size: 1.2rem;
+    .eng {
+      font-size: 0.9rem;
+    }
   }
   @media (max-width: 500px) {
     font-size: 1.1rem;
+    .eng {
+      font-size: 0.8rem;
+    }
   }
 `;
 
@@ -54,6 +64,7 @@ export const ResultList = styled.div`
     border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 900;
+    line-height: 30px;
   }
   p {
     font-size: 1rem;
@@ -73,7 +84,6 @@ export const ResultList = styled.div`
     }
     img {
       width: 50%;
-      margin: 10px;
     }
   }
 `;
@@ -83,12 +93,11 @@ export const ResultSauce = styled.div`
   display: block;
   box-sizing: border-box;
   text-align: center;
-  margin: 20px 0 0 0;
   span {
     display: block;
     font-size: 1.1rem;
     font-weight: 900;
-    margin: 0 0 10px 0;
+    line-height: 30px;
   }
   img {
     margin: 0 auto;

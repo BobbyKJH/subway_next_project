@@ -18,9 +18,12 @@ export const CombinationButton = styled.button`
     width: 25rem;
   }
   @media (max-width: 54rem) {
-    width: 90%;
+    width: 27rem;
     display: block;
     margin: 0 auto 2.5rem auto;
+  }
+  @media (max-width: 500px) {
+    width: 80%;
   }
   &:hover {
     transform: translateY(-5px);
@@ -58,12 +61,9 @@ export const CombinationContent = styled.div`
     display: block;
     font-size: 0.8rem;
     line-height: 10px;
-    padding: 0 0 1rem 0;
+    padding: 0.5rem 0 1rem 0;
   }
   @media (max-width: 54rem) {
-    .calorie {
-      margin: 0.5rem 0 0 0;
-    }
   }
   @media (max-width: 35rem) {
     margin: auto;
