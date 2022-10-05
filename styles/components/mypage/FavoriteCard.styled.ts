@@ -13,11 +13,17 @@ export const FavoriteCardTitle = styled.span`
   display: block;
   text-align: center;
   color: #000;
-  line-height: 30px;
-  margin: 0 0 10px 0;
+  line-height: 22px;
   font-size: 1rem;
+  .eng {
+    font-size: 0.9rem;
+    color: #ffa500;
+  }
   @media (max-width: 500px) {
     font-size: 0.8rem;
+    .eng {
+      font-size: 0.7rem;
+    }
   }
 `;
 
@@ -28,6 +34,7 @@ export const FavoriteCardSummary = styled.p`
   line-height: 22px;
   font-weight: 500;
   min-height: 30px;
+  margin: 20px 0 0 0;
   @media (max-width: 500px) {
     font-size: 0.6rem;
   }
