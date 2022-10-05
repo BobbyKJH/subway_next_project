@@ -59,6 +59,7 @@ export const CombinationContent = styled.div`
   }
   .calorie {
     display: block;
+    color: #000;
     font-size: 0.8rem;
     line-height: 10px;
     padding: 0.5rem 0 1rem 0;

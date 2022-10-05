@@ -7,4 +7,6 @@ export const RecipeButton = styled.button`
   top: 20px;
   font-weight: 900;
   background-color: #fff;
+  color: #000;
+  border: none;
 `;
