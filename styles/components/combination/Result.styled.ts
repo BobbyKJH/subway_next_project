@@ -7,7 +7,7 @@ export const ResultStyle = styled.div`
   width: 40rem;
   border-radius: 15px;
   @media (max-width: 54rem) {
-    width: 70%;
+    width: 100%;
   }
   @media (max-width: 500px) {
     width: 100%;
@@ -20,7 +20,7 @@ export const ResultImg = styled.img`
   margin: 0 auto;
   width: 25rem;
   @media (max-width: 500px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -58,6 +58,7 @@ export const ResultList = styled.div`
   p {
     font-size: 1rem;
     font-weight: 500;
+    line-height: 20px;
   }
   img {
     width: 10rem;
@@ -72,7 +73,7 @@ export const ResultList = styled.div`
     }
     img {
       width: 50%;
-      margin: 0 auto 10px auto;
+      margin: 10px;
     }
   }
 `;
@@ -87,30 +88,42 @@ export const ResultSauce = styled.div`
     display: block;
     font-size: 1.1rem;
     font-weight: 900;
+    margin: 0 0 10px 0;
   }
-  div {
-    display: block;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 99%;
-    align-items: center;
-  }
-
   img {
-    width: 33%;
-    margin: 10px 0;
+    margin: 0 auto;
+    width: 7rem;
   }
-  p {
+  .text {
     display: inline-block;
-    width: 33%;
-    font-size: 0.5rem;
+    width: 7rem;
+    line-height: 20px;
+    font-weight: 500;
+    font-size: 0.8rem;
   }
   @media (max-width: 500px) {
+    display: flex;
     span {
       font-size: 0.8rem;
+      width: 100%;
     }
-    p {
-      font-size: 13px;
+    div {
+      display: inline-block;
+      width: 50%;
+    }
+    img {
+      display: block;
+      height: 40px;
+      width: 57px;
+    }
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.7rem;
+      height: 40px;
+      width: 100%;
+      margin: 0;
     }
   }
 `;
@@ -118,5 +131,5 @@ export const ResultSauce = styled.div`
 // Result Kcal
 export const ResultCalorie = styled.p`
   text-align: center;
-  margin: 30px 0 5rem 0;
+  margin: 10px 0 5rem 0;
 `;

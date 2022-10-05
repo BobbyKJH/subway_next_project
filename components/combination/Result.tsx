@@ -58,9 +58,11 @@ const Result = ({
             <img key={idx} src={img} alt={img} />
           ))}
         </div>
-        <div className="image">
+        <div>
           {sauce.map((sauce: string, idx: number) => (
-            <p key={idx}>{sauce}</p>
+            <p className="text" key={idx}>
+              {sauce}
+            </p>
           ))}
         </div>
       </ResultSauce>
