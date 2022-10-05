@@ -3,6 +3,7 @@ import styled from "styled-components";
 // 전체 박스
 export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   box-sizing: border-box;
+  overflow: auto;
   margin: 0 auto;
   position: fixed;
   transition: height 0.5s ease-in;
@@ -116,16 +117,26 @@ export const MenuListSauce = styled.div`
     font-weight: 500;
   }
   @media (max-width: 500px) {
-    margin: 10px 0 0 0;
-    div {
-      justify-content: space-between;
-    }
+    display: flex;
     span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       font-size: 1rem;
+      margin: 0;
+      width: 50%;
+    }
+    div {
+      display: block;
+      width: 50%;
     }
     .sauce {
+      display: block;
+      text-align: left;
+      width: 100%;
       font-size: 0.7rem;
-      width: 50%;
+      line-height: 13px;
     }
   }
 `;
