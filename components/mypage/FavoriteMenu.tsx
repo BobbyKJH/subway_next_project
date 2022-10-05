@@ -14,6 +14,7 @@ const FavoriteMenu = ({ title, select }: { title: string; select: string }) => {
         <FavoriteCard
           img={menu.img}
           name={menu.name}
+          eng={menu.eng}
           summary={menu.summary}
           calorie={menu.calorie}
         />

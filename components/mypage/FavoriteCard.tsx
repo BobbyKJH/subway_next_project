@@ -10,12 +10,16 @@ import {
 // Type
 import { MenuType } from "../../utils/type";
 
-const FavoriteCard = ({ img, name, summary, calorie }: MenuType) => {
+const FavoriteCard = ({ img, name, eng, summary, calorie }: MenuType) => {
   return (
     <>
       <FavoriteMenuImg src={img} alt={name} />
 
       <FavoriteCardTitle>{name}</FavoriteCardTitle>
+
+      <FavoriteCardTitle>
+        <p className="eng">{eng}</p>
+      </FavoriteCardTitle>
 
       {summary ? (
         <FavoriteCardSummary>{summary}</FavoriteCardSummary>
