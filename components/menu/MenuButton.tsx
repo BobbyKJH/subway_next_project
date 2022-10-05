@@ -3,7 +3,10 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
 // Style
-import { MenuButtonBox } from "../../styles/components/menu/MenuButton.styled";
+import {
+  MenuBtn,
+  MenuButtonBox,
+} from "../../styles/components/menu/MenuButton.styled";
 
 const MenuButton = () => {
   const router = useRouter();
@@ -13,11 +16,11 @@ const MenuButton = () => {
   return (
     <MenuButtonBox>
       <Link href={`/menu/sandwich`} id="sandwich">
-        <a className={menu("sandwich") ? "active" : ""}>샌드위치</a>
+        <MenuBtn className={menu("sandwich") ? "active" : ""}>샌드위치</MenuBtn>
       </Link>
 
       <Link href={`/menu/bread`} id="bread">
-        <a className={menu("bread") ? "active" : ""}>빵</a>
+        <MenuBtn className={menu("bread") ? "active" : ""}>빵</MenuBtn>
       </Link>
 
       <Link href={`/menu/cheese`} id="cheese">
