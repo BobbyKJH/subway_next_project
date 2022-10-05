@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useAppDispatch } from "../../../store/hooks";
 import {
   sandwichKcal,
+  selectEng,
   selectName,
   selectSandwich,
 } from "../../../store/recipeSlice";
@@ -27,10 +28,11 @@ const Sandwich = ({ sandwich }: { sandwich: MapType }) => {
 
   // 샌드위치 이름 및 이미지 선택
   const SandwichMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const { value, name, id } = e.currentTarget;
+    const { value, name, title, id } = e.currentTarget;
     dispatch(selectName(name));
     dispatch(selectSandwich(id));
     dispatch(sandwichKcal(value));
+    dispatch(selectEng(title));
     router.push("/combination/bread");
   };
 
@@ -45,6 +47,7 @@ const Sandwich = ({ sandwich }: { sandwich: MapType }) => {
           onClick={SandwichMenu}
           id={item.img}
           name={item.name}
+          title={item.eng_name}
           value={item.calorie}
           key={item.id}
         >

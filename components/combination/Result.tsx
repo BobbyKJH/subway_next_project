@@ -16,6 +16,7 @@ import { AddCommas } from "../../utils/utils";
 
 interface Type {
   name: string;
+  eng: string;
   sandwich: string;
   bread: string;
   breadImage: string;
@@ -28,6 +29,7 @@ interface Type {
 
 const Result = ({
   name,
+  eng,
   sandwich,
   bread,
   breadImage,
@@ -42,6 +44,10 @@ const Result = ({
       <ResultImg src={sandwich} alt={sandwich} />
 
       <ResultSandwich>{name}</ResultSandwich>
+
+      <ResultSandwich>
+        <p className="eng">{eng}</p>
+      </ResultSandwich>
 
       <ResultList className="bread">
         <List name="빵" image={breadImage} menu={bread} />

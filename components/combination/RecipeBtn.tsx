@@ -22,23 +22,23 @@ const RecipeBtn = ({
   // 소스 Kcal 합산
   const sum = sauceKcal
     ? sauceKcal.slice(0, 3).reduce((a: number, b: number) => a + b)
-    : null;
+    : 0;
 
   // 총 Kcal 합산
-  const Kcal = sum
-    ? sum +
-      Number(select.sandwichCalorie) +
-      Number(select.breadCalorie) +
-      Number(select.cheeseCalorie)
-    : null;
+  const Kcal =
+    sum +
+    Number(select.sandwichCalorie) +
+    Number(select.breadCalorie) +
+    Number(select.cheeseCalorie);
 
   // 완성 storage 저장
   const Result = (e: React.MouseEvent<HTMLButtonElement>) => {
     localStorage.setItem(
       "recipe",
       JSON.stringify({
-        name: select.name,
         sandwich: select.sandwich,
+        name: select.name,
+        eng: select.eng,
         kcal: Kcal,
         bread: select.bread,
         breadImg: select.breadImg,
@@ -50,6 +50,7 @@ const RecipeBtn = ({
     );
     router.push("/combination/result");
   };
+
   return (
     <RecipeButton onClick={Result}>
       <strong>완성</strong>
