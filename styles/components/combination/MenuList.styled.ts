@@ -3,9 +3,9 @@ import styled from "styled-components";
 // 전체 박스
 export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   box-sizing: border-box;
-  overflow: auto;
   margin: 0 auto;
-  position: fixed;
+  overflow: hidden;
+  position: ${(props) => (props.bottom ? "sticky" : "fixed")};
   transition: height 0.5s ease-in;
   bottom: ${(props) => (props.bottom ? 0 : "61px")};
   width: 72rem;
@@ -14,7 +14,7 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   border-bottom: none;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  height: ${(props) => `${props.height}%`};
+  height: ${(props) => `${props.height}rem`};
   background-color: #fff;
   @media (max-width: 72rem) {
     width: 54rem;
@@ -24,9 +24,15 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   }
 `;
 
-export const ComplecationBtn = styled.button`
+export const ComplecationBtn = styled.div`
   display: block;
-  margin: 0 auto;
+  text-align: center;
+
+  p {
+    transform: ${(props: { arrow: number }) =>
+      props.arrow <= 4 ? "rotate(-30deg)" : "rotate(150deg)"};
+    transition: 0.5s;
+  }
 `;
 
 // 샌드위치 이미지
@@ -100,6 +106,7 @@ export const MenuListSauce = styled.div`
     text-align: center;
     font-size: 1.2rem;
     font-weight: 900;
+    line-height: 30px;
     width: 50%;
     margin: 0 auto 10px auto;
   }
@@ -121,8 +128,7 @@ export const MenuListSauce = styled.div`
     span {
       display: flex;
       justify-content: center;
-      align-items: center;
-
+      align-items: flex-start;
       font-size: 1rem;
       margin: 0;
       width: 50%;
@@ -136,7 +142,6 @@ export const MenuListSauce = styled.div`
       text-align: left;
       width: 100%;
       font-size: 0.7rem;
-      line-height: 13px;
     }
   }
 `;
