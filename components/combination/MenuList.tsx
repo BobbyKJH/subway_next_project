@@ -28,16 +28,16 @@ const MenuList = ({
   sauceImage?: string[];
 }) => {
   const router = useRouter();
-  const [open, setOpen] = useState(10);
+  const [open, setOpen] = useState(4);
   const [bottom, setBottom] = useState(true);
   const select = useAppSelector(selectMenu);
 
   // 선택 메뉴 보기
-  const OpenMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (open === 10) {
-      setOpen(75);
+  const OpenMenu = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (open === 4) {
+      setOpen(30);
     } else {
-      setOpen(10);
+      setOpen(4);
     }
   };
 
@@ -59,7 +59,7 @@ const MenuList = ({
   // 소스 3개 선택시 올라오는 효과
   useEffect(() => {
     if (sauce?.length === 3) {
-      setOpen(75);
+      setOpen(30);
     }
   }, [sauce]);
 
@@ -75,8 +75,8 @@ const MenuList = ({
 
   return (
     <MenuListBox height={open} bottom={bottom}>
-      <ComplecationBtn onClick={OpenMenu}>
-        {open > 10 ? <>닫기</> : <>열기</>}
+      <ComplecationBtn onClick={OpenMenu} arrow={open}>
+        <p>◀</p>
       </ComplecationBtn>
 
       {select.sandwich ? (
