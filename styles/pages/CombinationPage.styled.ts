@@ -5,12 +5,16 @@ export const CombinationPage = styled.div`
   display: block;
   margin: 0 auto;
   width: 72rem;
-  padding: 0 0 7rem 0;
   @media (max-width: 72rem) {
     width: 54rem;
   }
   @media (max-width: 54rem) {
     width: 100%;
+    button {
+      &:last-of-type {
+        margin-bottom: 150px;
+      }
+    }
   }
 `;
 
