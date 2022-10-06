@@ -35,7 +35,7 @@ const MenuList = ({
   // 선택 메뉴 보기
   const OpenMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     if (open === 4) {
-      setOpen(30);
+      setOpen(36);
     } else {
       setOpen(4);
     }
@@ -59,7 +59,7 @@ const MenuList = ({
   // 소스 3개 선택시 올라오는 효과
   useEffect(() => {
     if (sauce?.length === 3) {
-      setOpen(30);
+      setOpen(36);
     }
   }, [sauce]);
 
@@ -103,12 +103,10 @@ const MenuList = ({
             <span>소스</span>
 
             <div>
-              {sauce?.slice(0, 3).map((list, idx) => (
-                <React.Fragment key={list}>
-                  <p className="sauce">
-                    {idx + 1}.{list}
-                  </p>
-                </React.Fragment>
+              {sauce?.slice(0, 3).map((list) => (
+                <p className="sauce" key={list}>
+                  {list}
+                </p>
               ))}
             </div>
           </>

@@ -9,12 +9,13 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   transition: height 0.5s ease-in;
   bottom: ${(props) => (props.bottom ? 0 : "61px")};
   width: 72rem;
-  padding: 1rem 0.5rem 0 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   border: 3px solid #000;
   border-bottom: none;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  height: ${(props) => `${props.height}rem`};
+  height: ${(props) =>
+    props.bottom ? `${props.height}rem` : `${props.height * 2}%`};
   background-color: #fff;
   @media (max-width: 72rem) {
     width: 54rem;
@@ -27,10 +28,10 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
 export const ComplecationBtn = styled.div`
   display: block;
   text-align: center;
-
+  cursor: pointer;
   p {
     transform: ${(props: { arrow: number }) =>
-      props.arrow <= 4 ? "rotate(-30deg)" : "rotate(150deg)"};
+      props.arrow === 4 ? "rotate(-30deg)" : "rotate(150deg)"};
     transition: 0.5s;
   }
 `;
@@ -39,9 +40,9 @@ export const ComplecationBtn = styled.div`
 export const SandwichImg = styled.img`
   display: block;
   margin: 0 auto;
-  width: 15rem;
+  width: 16rem;
   @media (max-width: 500px) {
-    width: 60%;
+    width: 50%;
   }
 `;
 // 샌드위치 이름
@@ -120,7 +121,7 @@ export const MenuListSauce = styled.div`
     box-sizing: border-box;
     line-height: 30px;
     width: 20%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 500;
   }
   @media (max-width: 500px) {
