@@ -5,7 +5,6 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
 import { StringType } from "../utils/type";
 
-// Define the initial state using that type
 const initialState: StringType = {
   name: "",
   eng: "",
@@ -53,6 +52,18 @@ export const counterSlice = createSlice({
     cheeseImage: (state, action: PayloadAction<string>) => {
       state.cheeseImg = action.payload;
     },
+    resetButton: (state) => {
+      state.name = "";
+      state.eng = "";
+      state.sandwich = "";
+      state.sandwichCalorie = "";
+      state.bread = "";
+      state.breadImg = "";
+      state.breadCalorie = "";
+      state.cheese = "";
+      state.cheeseImg = "";
+      state.cheeseCalorie = "";
+    },
   },
 });
 
@@ -67,6 +78,7 @@ export const {
   selectCheese,
   cheeseImage,
   cheeseKcal,
+  resetButton,
 } = counterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
