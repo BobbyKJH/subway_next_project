@@ -11,6 +11,9 @@ const op = keyframes`
 
 export const HeaderStyle = styled.div`
   background-color: #009000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   .header {
     display: flex;
     justify-content: space-between;
@@ -43,7 +46,7 @@ export const HeaderTitle = styled.a`
   height: 60px;
   font-size: 1.4rem;
   font-weight: 900;
-  color: #ffce32;
+  color: #ffca32;
 `;
 
 // Header Link
@@ -61,7 +64,6 @@ export const HeaderNav = styled.a`
 
 // 모바일 Header
 export const MobileHeaderStyle = styled.div`
-  position: relative;
   display: block;
   width: 100%;
   background-color: #009000;
@@ -86,28 +88,34 @@ export const MobileTitle = styled.button`
 `;
 
 export const MobileButton = styled.button<{ turn: boolean }>`
+  cursor: pointer;
   background-color: #fff;
   border: none;
+  background-color: #009000;
+  transition: 0.5s;
+  transform: ${(props) => (props.turn ? "rotate(225deg)" : "rotate(0deg)")};
+
   .arrow {
     transition: 0.5s;
-    transform: ${(props) => (props.turn ? "rotate(180deg)" : "rotate(0deg)")};
     img {
       width: 20px;
     }
   }
 `;
 
-export const MobileNav = styled.div`
-  position: absolute;
+export const MobileNav = styled.div<{ width: boolean }>`
+  position: fixed;
+  transition: 1s;
+  bottom: 0;
+  right: 0;
+  top: 0;
   display: block;
   box-sizing: border-box;
   background-color: #808080;
   transition: 0.5s;
-  width: 100%;
+  width: ${(props) => (props.width ? "50%" : 0)};
   z-index: 100;
   animation: ${op} 0.2s;
-  border: 3px solid black;
-  border-top: none;
   button {
     display: block;
     border: none;
@@ -119,9 +127,14 @@ export const MobileNav = styled.div`
     transition: 0.5s;
     font-size: 0.8rem;
     font-weight: 900;
+
     &:hover {
       background-color: #ffc20d;
       color: #009000;
+    }
+    &:last-of-type {
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
     }
   }
   .active {

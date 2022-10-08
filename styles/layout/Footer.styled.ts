@@ -6,6 +6,7 @@ export const MobileFooterStyle = styled.div`
   bottom: 0;
   width: 100%;
   max-height: 61px;
+  z-index: 100;
   .active {
     border: 10px inset #fff;
   }
