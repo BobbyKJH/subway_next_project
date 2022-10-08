@@ -8,11 +8,16 @@ import {
   MobileFooterStyle,
 } from "../../styles/layout/Footer.styled";
 // Image
-import Image from "next/image";
-import home from "../../img/home.png";
-import menu from "../../img/menu.png";
-import combination from "../../img/combination.png";
-import mypage from "../../img/mypage.png";
+import {
+  RiHome2Fill,
+  RiHome2Line,
+  RiCreativeCommonsNdFill,
+  RiCreativeCommonsNdLine,
+  RiSubwayLine,
+  RiSubwayFill,
+  RiUser3Fill,
+  RiUser3Line,
+} from "react-icons/ri";
 
 const MobileFooter = () => {
   const router = useRouter();
@@ -25,25 +30,29 @@ const MobileFooter = () => {
     <MobileFooterStyle>
       <Link href={"/"}>
         <MobileFooterBox className={router.pathname === "/" ? "active" : ""}>
-          <Image src={home} width={30} height={30} />
+          {router.pathname === "/" ? <RiHome2Fill /> : <RiHome2Line />}
         </MobileFooterBox>
       </Link>
 
       <Link href={"/menu/sandwich"}>
         <MobileFooterBox className={Page("/menu") ? "active" : ""}>
-          <Image src={menu} width={30} height={30} />
+          {Page("/menu") ? (
+            <RiCreativeCommonsNdFill />
+          ) : (
+            <RiCreativeCommonsNdLine />
+          )}
         </MobileFooterBox>
       </Link>
 
       <Link href={"/combination/sandwich"}>
         <MobileFooterBox className={Page("/combination") ? "active" : ""}>
-          <Image src={combination} width={30} height={30} />
+          {Page("/combination") ? <RiSubwayFill /> : <RiSubwayLine />}
         </MobileFooterBox>
       </Link>
 
       <Link href={"/mypage"}>
         <MobileFooterBox className={Page("/mypage") ? "active" : ""}>
-          <Image src={mypage} width={30} height={30} />
+          {Page("/mypage") ? <RiUser3Fill /> : <RiUser3Line />}
         </MobileFooterBox>
       </Link>
     </MobileFooterStyle>

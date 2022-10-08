@@ -11,8 +11,7 @@ import {
   MobileButton,
 } from "../../styles/layout/Header.styled";
 // Image
-import Image from "next/image";
-import arrow from "../../img/arrow.png";
+import { ImPlus } from "react-icons/im";
 
 const MobileHeader = () => {
   const router = useRouter();
@@ -39,20 +38,16 @@ const MobileHeader = () => {
         <Link href={`/`}>
           <MobileTitle onClick={closeNav}>My Subway</MobileTitle>
         </Link>
+
         <MobileButton onClick={openNav} turn={nav}>
-          <Image
-            src={arrow}
-            alt="open"
-            className="arrow"
-            width={20}
-            height={20}
-          />
+          <ImPlus />
         </MobileButton>
       </MobileHeaderBox>
 
       {/* Nav 창 */}
       {nav && (
-        <MobileNav>
+        <MobileNav width={nav}>
+          <button onClick={openNav}>11</button>
           <Link href={`/menu/sandwich`}>
             <button
               onClick={closeNav}
