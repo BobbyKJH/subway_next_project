@@ -1,8 +1,8 @@
 // React
-import React from "react";
-import { useRouter } from "next/router";
+import React, { useState } from "react";
 // Style
 import { ProductLike } from "../../styles/components/menu/MenuProduct.styled";
+import { useEffect } from "react";
 
 interface MenuSelectType {
   title: string;
@@ -21,12 +21,20 @@ const MenuLike = ({
   summary,
   calorie,
 }: MenuSelectType) => {
-  const router = useRouter();
+  const [like, setLike] = useState<boolean>(false);
 
   const storage = localStorage.getItem(`${title}`);
   const check = JSON.parse(storage as string);
 
-  const Like = () => {
+  useEffect(() => {
+    if (check !== null && check.name === name) {
+      setLike(true);
+    } else {
+      setLike(false);
+    }
+  }, []);
+
+  const Like = (e: React.ChangeEvent<HTMLInputElement>) => {
     localStorage.setItem(
       `${title}`,
       JSON.stringify({
@@ -37,18 +45,10 @@ const MenuLike = ({
         calorie: calorie,
       })
     );
-    router.reload();
+    setLike(true);
   };
 
-  return (
-    <ProductLike onClick={Like}>
-      {check !== null && check.name === name ? (
-        <span>❤️</span>
-      ) : (
-        <span>🖤</span>
-      )}
-    </ProductLike>
-  );
+  return <ProductLike type="checkbox" onChange={Like} checked={like} />;
 };
 
 export default MenuLike;
