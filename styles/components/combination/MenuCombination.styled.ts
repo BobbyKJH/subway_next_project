@@ -15,15 +15,9 @@ export const CombinationButton = styled.button`
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 
   @media (max-width: 72rem) {
-    width: 25rem;
-  }
-  @media (max-width: 54rem) {
-    width: 27rem;
-    display: block;
-    margin: 0 auto 2.5rem auto;
-  }
-  @media (max-width: 500px) {
-    width: 80%;
+    margin: 0 1% 2rem 1%;
+    display: inline-block;
+    width: 48%;
   }
   &:hover {
     transform: translateY(-5px);
@@ -36,7 +30,7 @@ export const CombinationImg = styled.img`
   width: 100%;
   @media (max-width: 54rem) {
     margin: auto;
-    width: 70%;
+    width: 100%;
   }
 `;
 
@@ -64,18 +58,17 @@ export const CombinationContent = styled.div`
     line-height: 10px;
     padding: 0.5rem 0 1rem 0;
   }
-  @media (max-width: 54rem) {
-  }
   @media (max-width: 35rem) {
     margin: auto;
+    line-height: 15px;
     .name {
-      font-size: 14px;
+      font-size: 0.7em;
     }
     .eng {
-      font-size: 10px;
+      font-size: 0.5em;
     }
     .calorie {
-      font-size: 10px;
+      font-size: 0.7em;
     }
   }
 `;
