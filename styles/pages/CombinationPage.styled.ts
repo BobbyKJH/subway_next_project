@@ -9,12 +9,15 @@ export const CombinationPage = styled.div`
     width: 54rem;
   }
   @media (max-width: 54rem) {
-    width: 100%;
+    width: 34rem;
     button {
       &:last-of-type {
         margin-bottom: 150px;
       }
     }
+  }
+  @media (max-width: 34rem) {
+    width: 100%;
   }
 `;
 
