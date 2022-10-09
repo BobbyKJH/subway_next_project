@@ -49,15 +49,18 @@ export const ProductKcal = styled.span`
   display: block;
   text-align: center;
   font-size: 0.8rem;
+  margin: 0 0 20px 0;
 `;
 
-export const ProductLike = styled.button`
+export const ProductLike = styled.input`
+  position: absolute;
+  top: 10px;
+  left: 10px;
   display: block;
-  margin: 1rem auto 4rem auto;
-  border: 5px outset #009000;
-  padding: 0.2rem 5rem;
-  width: 100px;
-  :active {
-    border: 5px inset #009000;
-  }
+  padding: 0;
+  background-color: red;
+  margin: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 `;
