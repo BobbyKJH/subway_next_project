@@ -42,9 +42,9 @@ export const ResultSandwich = styled.span`
     }
   }
   @media (max-width: 500px) {
-    font-size: 1.1rem;
+    font-size: 1em;
     .eng {
-      font-size: 0.8rem;
+      font-size: 0.8em;
     }
   }
 `;
@@ -140,5 +140,6 @@ export const ResultSauce = styled.div`
 // Result Kcal
 export const ResultCalorie = styled.p`
   text-align: center;
+  line-height: 30px;
   margin: 10px 0 5rem 0;
 `;
