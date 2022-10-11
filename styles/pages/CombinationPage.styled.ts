@@ -12,7 +12,7 @@ export const CombinationPage = styled.div`
     width: 34rem;
     button {
       &:last-of-type {
-        margin-bottom: 150px;
+        margin-bottom: 8rem;
       }
     }
   }

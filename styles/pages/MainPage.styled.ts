@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-export const NavBoxContainer = styled.div`
+export const MainPageStyle = styled.div`
   display: block;
-  margin: 0 auto;
-  width: 40rem;
-  height: 40rem;
-  @media (max-width: 500px) {
-    width: 100%;
-    height: 50vh;
-  }
+  margin: 0 auto 61px auto;
 `;
