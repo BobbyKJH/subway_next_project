@@ -1,11 +1,14 @@
+// React
 import React, { useCallback, useEffect, useState } from "react";
+import ScrollTop from "../common/ScrollTop";
+// Component
 import MobileFooter from "./MobileFooter";
+// Style
 
 const Footer = () => {
   const [mode, setMode] = useState(true);
 
   const MobileMode = useCallback(() => {
-    console.log(window.innerWidth);
     if (window.innerWidth > 1000) {
       setMode(true);
     } else {
@@ -23,7 +26,17 @@ const Footer = () => {
     };
   }, []);
 
-  return <>{mode ? <div>1</div> : <MobileFooter />}</>;
+  return (
+    <>
+      <ScrollTop />
+
+      {mode ? null : (
+        <>
+          <MobileFooter />
+        </>
+      )}
+    </>
+  );
 };
 
 export default Footer;
