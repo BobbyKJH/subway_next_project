@@ -5,7 +5,7 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   box-sizing: border-box;
   margin: 0 auto;
   overflow: hidden;
-  position: ${(props) => (props.bottom ? "sticky" : "fixed")};
+  position: fixed;
   transition: height 0.5s ease-in;
   bottom: ${(props) => (props.bottom ? 0 : "61px")};
   width: 72rem;
@@ -14,24 +14,26 @@ export const MenuListBox = styled.div<{ height: number; bottom: boolean }>`
   border-bottom: none;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  height: ${(props) =>
-    props.bottom ? `${props.height}rem` : `${props.height * 2}%`};
+  height: ${(props) => `${props.height}%`};
   background-color: #fff;
   @media (max-width: 72rem) {
     width: 54rem;
   }
   @media (max-width: 54rem) {
+    width: 34rem;
+  }
+  @media (max-width: 500px) {
     width: 100%;
   }
 `;
 
-export const ComplecationBtn = styled.div`
+export const ComplecationBtn = styled.div<{ arrow: number }>`
   display: block;
   text-align: center;
   cursor: pointer;
   p {
-    transform: ${(props: { arrow: number }) =>
-      props.arrow === 4 ? "rotate(-30deg)" : "rotate(150deg)"};
+    transform: ${(props) =>
+      props.arrow > 9 ? "rotate(-30deg)" : "rotate(150deg)"};
     transition: 0.5s;
   }
 `;
@@ -49,7 +51,7 @@ export const SandwichImg = styled.img`
 export const MenuListName = styled.span`
   display: block;
   text-align: center;
-  line-height: 30px;
+  line-height: 20px;
   font-weight: 900;
   font-size: 1.2rem;
   .eng {
@@ -120,8 +122,8 @@ export const MenuListSauce = styled.div`
     text-align: center;
     box-sizing: border-box;
     line-height: 30px;
-    width: 20%;
-    font-size: 1rem;
+    width: 30%;
+    font-size: 0.8rem;
     font-weight: 500;
   }
   @media (max-width: 500px) {
