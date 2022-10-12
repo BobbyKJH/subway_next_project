@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+export const FooterStyle = styled.div`
+  box-sizing: border-box;
+  background-color: #000;
+  width: 100%;
+  height: 8rem;
+  bottom: 0;
+`;
+
+export const FooterBox = styled.div`
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid white;
+  width: 72rem;
+  height: 8rem;
+  @media (max-width: 72rem) {
+    width: 54rem;
+  }
+`;
+
 export const MobileFooterStyle = styled.div`
   position: fixed;
   box-sizing: border-box;
