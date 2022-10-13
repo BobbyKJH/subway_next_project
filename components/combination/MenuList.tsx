@@ -35,7 +35,7 @@ const MenuList = ({
   // 선택 메뉴 보기
   const OpenMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     if (open === 9) {
-      setOpen(72);
+      setOpen(75);
     } else {
       setOpen(9);
     }
@@ -59,7 +59,7 @@ const MenuList = ({
   // 소스 3개 선택시 올라오는 효과
   useEffect(() => {
     if (sauce?.length === 3) {
-      setOpen(72);
+      setOpen(75);
     }
   }, [sauce]);
 
