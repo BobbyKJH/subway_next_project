@@ -4,7 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 // Component
 import Loading from "../common/Loading";
 // Style
-import { LogInStyle } from "../../styles/LogInStyle";
+import {
+  LoginButton,
+  LoginInput,
+  LogInStyle,
+  LoginTitle,
+} from "../../styles/LogIn.styled";
+// Image
 
 const LogIn = () => {
   const router = useRouter();
@@ -40,14 +46,14 @@ const LogIn = () => {
     <LogInStyle onSubmit={decideNickName}>
       {isLoading ? (
         <>
-          <span>당신만의 서브웨이 레시피를 만들어 보세요.</span>
-          <input
+          <LoginTitle>My Recipe</LoginTitle>
+          <LoginInput
             type="text"
             onChange={inputNickName}
             ref={inputRef}
             placeholder="닉네임을 입력해주세요."
           />
-          <button type="submit">결정</button>
+          <LoginButton type="submit">결정</LoginButton>
         </>
       ) : (
         <Loading />
