@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Loading from "../common/Loading";
 // Style
 import {
+  LoginBox,
   LoginButton,
   LoginInput,
   LogInStyle,
@@ -43,22 +44,22 @@ const LogIn = () => {
   };
 
   return (
-    <LogInStyle onSubmit={decideNickName}>
+    <LoginBox>
       {isLoading ? (
-        <>
-          <LoginTitle>My Recipe</LoginTitle>
+        <LogInStyle onSubmit={decideNickName}>
+          <LoginTitle>My Subway Recipe</LoginTitle>
           <LoginInput
             type="text"
             onChange={inputNickName}
             ref={inputRef}
             placeholder="닉네임을 입력해주세요."
           />
-          <LoginButton type="submit">결정</LoginButton>
-        </>
+          <LoginButton type="submit">들어 가기</LoginButton>
+        </LogInStyle>
       ) : (
         <Loading />
       )}
-    </LogInStyle>
+    </LoginBox>
   );
 };
 
