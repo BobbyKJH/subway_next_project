@@ -11,7 +11,7 @@ import {
   MobileButton,
 } from "../../styles/layout/Header.styled";
 // Image
-import { ImPlus } from "react-icons/im";
+import { BsArrowRightSquareFill, BsArrowLeftSquareFill } from "react-icons/bs";
 
 const MobileHeader = () => {
   const router = useRouter();
@@ -28,7 +28,9 @@ const MobileHeader = () => {
   };
 
   // nav 선택시 close
-  const closeNav = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const closeNav = (
+    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
+  ) => {
     setNav(false);
   };
 
@@ -39,15 +41,17 @@ const MobileHeader = () => {
           <MobileTitle onClick={closeNav}>My Subway</MobileTitle>
         </Link>
 
-        <MobileButton onClick={openNav} turn={nav}>
-          <ImPlus />
+        <MobileButton onClick={openNav}>
+          <BsArrowLeftSquareFill />
         </MobileButton>
       </MobileHeaderBox>
 
       {/* Nav 창 */}
       {nav && (
         <MobileNav width={nav}>
-          <button onClick={openNav}>11</button>
+          <button className="close" onClick={closeNav}>
+            <BsArrowRightSquareFill />
+          </button>
           <Link href={`/menu/sandwich`}>
             <button
               onClick={closeNav}
