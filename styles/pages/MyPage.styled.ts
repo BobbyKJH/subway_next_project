@@ -22,6 +22,10 @@ export const OpenButton = styled.button<{ fc: boolean }>`
     display: inline-block;
     font-weight: 900;
   }
+  div {
+    display: inline-block;
+    transform: ${(props) => (props.fc ? "rotate(0deg)" : "rotate(180deg)")};
+  }
   @media (max-width: 500px) {
     font-size: 1.4rem;
   }
