@@ -11,7 +11,7 @@ export const ProductPage = styled.div`
     width: 25rem;
   }
   @media (max-width: 700px) {
-    margin: 1.5rem auto;
+    margin: 1.5rem auto 66px auto;
     width: 100%;
   }
 `;
