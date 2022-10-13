@@ -7,10 +7,14 @@ import RecipeSauce from "./RecipeSauce";
 // Style
 import {
   MakeStyle,
+  MyRecipeKcal,
   MyRecipeSandwich,
   MyRecipeSandwichName,
+  MyRecipeSauce,
   MyRecipeStyle,
 } from "../../styles/components/mypage/MyRecipe.styled";
+// Utils
+import { AddCommas } from "../../utils/utils";
 
 const MyRecipe = () => {
   const menu = JSON.parse(localStorage.getItem("recipe") as string);
@@ -23,15 +27,24 @@ const MyRecipe = () => {
 
           <MyRecipeSandwichName>{menu.name}</MyRecipeSandwichName>
 
+          <MyRecipeSandwichName>
+            <p className="eng">{menu.eng}</p>
+          </MyRecipeSandwichName>
+
           {/* 선택 Bread List */}
           <RecipeList title="빵" img={menu.breadImg} name={menu.bread} />
 
           {/* 선택 Cheese List */}
           <RecipeList title="치즈" img={menu.cheeseImg} name={menu.cheese} />
 
-          <RecipeSauce title="소스" sauce={menu.sauceImg} />
+          <MyRecipeSauce>
+            <span>소스</span>
+            <RecipeSauce sauce={menu.sauceImg} />
 
-          <RecipeSauce sauce={menu.sauce} />
+            <RecipeSauce sauce={menu.sauce} />
+          </MyRecipeSauce>
+
+          <MyRecipeKcal>{AddCommas(menu.kcal)} Kcal</MyRecipeKcal>
         </MyRecipeStyle>
       ) : (
         <MakeStyle>
