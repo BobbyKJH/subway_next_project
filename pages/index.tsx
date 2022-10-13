@@ -1,23 +1,15 @@
-import type { NextPage } from "next";
-import { useRouter } from "next/router";
 // React
+import React from "react";
+// Component
+import MainBox from "../components/main/MainBox";
+// Style
+import { MainPageStyle } from "../styles/pages/MainPage.styled";
+// Type
+import type { NextPage } from "next";
 
-const Home: NextPage = () => {
-  const router = useRouter();
-
-  const NickName = localStorage.getItem("nick");
-
-  const LogOut = () => {
-    localStorage.removeItem("nick");
-    router.reload();
-  };
-
-  return (
-    <>
-      <p>{NickName}</p>
-      <button onClick={LogOut}>변경하기</button>
-    </>
-  );
-};
-
+const Home: NextPage = () => (
+  <MainPageStyle>
+    <MainBox />
+  </MainPageStyle>
+);
 export default Home;
