@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 const op = keyframes`
 0%{
-  opacity: 0;
+  width: 0;
 }
 100%{
-  opacity: 1;
+  width: 50%;
 }
 `;
 
@@ -46,7 +46,7 @@ export const HeaderTitle = styled.a`
   height: 60px;
   font-size: 1.4rem;
   font-weight: 900;
-  color: #ffca32;
+  color: #ffce32;
 `;
 
 // Header Link
@@ -59,6 +59,7 @@ export const HeaderNav = styled.a`
   justify-content: center;
   height: 60px;
   color: #ffce32;
+  font-weight: 900;
   width: 150px;
 `;
 
@@ -87,20 +88,16 @@ export const MobileTitle = styled.button`
   color: #ffce23;
 `;
 
-export const MobileButton = styled.button<{ turn: boolean }>`
+export const MobileButton = styled.button`
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  background-color: #fff;
+  color: #ffce23;
   border: none;
   background-color: #009000;
+  font-weight: 900;
+  font-size: 2rem;
   transition: 0.5s;
-  transform: ${(props) => (props.turn ? "rotate(225deg)" : "rotate(0deg)")};
-
-  .arrow {
-    transition: 0.5s;
-    img {
-      width: 20px;
-    }
-  }
 `;
 
 export const MobileNav = styled.div<{ width: boolean }>`
@@ -111,11 +108,12 @@ export const MobileNav = styled.div<{ width: boolean }>`
   top: 0;
   display: block;
   box-sizing: border-box;
-  background-color: #808080;
-  transition: 0.5s;
+  border: 1px solid black;
+  background-color: #fff;
+  transition: width 0.5s;
   width: ${(props) => (props.width ? "50%" : 0)};
+  animation: ${op} 0.5s;
   z-index: 100;
-  animation: ${op} 0.2s;
   button {
     display: block;
     border: none;
@@ -131,10 +129,6 @@ export const MobileNav = styled.div<{ width: boolean }>`
     &:hover {
       background-color: #ffc20d;
       color: #009000;
-    }
-    &:last-of-type {
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
     }
   }
   .active {
