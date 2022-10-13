@@ -9,8 +9,10 @@ export const ScorllTopButton = styled.button`
   bottom: 70px;
   right: 10px;
   width: 3rem;
+  height: 3rem;
   transition: 0.5s;
-  font-size: 2rem;
+  font-size: 1rem;
+  font-weight: 900;
   color: #000;
   background-color: #fff;
   border-radius: 10px;
@@ -20,7 +22,8 @@ export const ScorllTopButton = styled.button`
     color: #fff;
   }
   @media (max-width: 500px) {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.7rem;
   }
 `;
