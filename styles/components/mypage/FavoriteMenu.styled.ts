@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FavoriteMenuStyle = styled.div`
+  position: relative;
   display: inline-block;
   width: 18rem;
   margin: 2rem 0;
@@ -13,6 +14,7 @@ export const FavoriteMenuStyle = styled.div`
     text-align: center;
   }
   @media (max-width: 500px) {
+    width: 50%;
     .menu {
       font-size: 1rem;
     }

@@ -11,10 +11,19 @@ export const MyRecipeStyle = styled.div`
 
 export const MakeStyle = styled.div`
   text-align: center;
-  padding: 3rem 0;
   margin: auto 0;
+  padding: 3rem 0;
   p {
-    padding: 2rem 0;
+    font-size: 1.5em;
+    padding: 30px 0;
+  }
+  span {
+    color: #000;
+    cursor: pointer;
+    line-height: 30px;
+    &:hover {
+      color: #fff;
+    }
   }
 `;
 
@@ -24,13 +33,24 @@ export const MyRecipeSandwich = styled.img`
   width: 100%;
 `;
 // 샌드위치 이름
-export const MyRecipeSandwichName = styled.p`
+export const MyRecipeSandwichName = styled.span`
   display: block;
   text-align: center;
   color: #000;
   line-height: 30px;
   font-size: 1.2rem;
   font-weight: 900;
+  .eng {
+    color: #ffa500;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  @media (max-width: 500px) {
+    font-size: 1rem;
+    .eng {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 // 빵 이름
@@ -46,16 +66,38 @@ export const MyRecipeSauce = styled.div`
     display: block;
     text-align: center;
     font-weight: 900;
+    line-height: 30px;
+    width: 100%;
+  }
+  div {
+    display: block;
   }
   img {
-    width: 30%;
+    width: 33%;
   }
   p {
     display: inline-block;
-    text-align: center;
-    width: 30%;
+    width: 33%;
+    line-height: 40px;
     font-size: 0.8rem;
     font-weight: 500;
+  }
+  @media (max-width: 500px) {
+    display: flex;
+    div {
+      width: 50%;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 57px;
+      height: 40px;
+    }
+    p {
+      display: block;
+      font-size: 0.7rem;
+      width: 100%;
+    }
   }
 `;
 // Kcal

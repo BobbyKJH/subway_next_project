@@ -2,11 +2,8 @@ import styled from "styled-components";
 
 export const FavoriteMenuImg = styled.img`
   display: block;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
-  @media (max-width: 500px) {
-    width: 90%;
-  }
 `;
 
 export const FavoriteCardTitle = styled.span`
@@ -20,9 +17,9 @@ export const FavoriteCardTitle = styled.span`
     color: #ffa500;
   }
   @media (max-width: 500px) {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     .eng {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
   }
 `;
@@ -33,15 +30,22 @@ export const FavoriteCardSummary = styled.p`
   font-size: 0.7rem;
   line-height: 22px;
   font-weight: 500;
-  min-height: 30px;
+  /* min-height: 44px; */
   margin: 20px 0 0 0;
   @media (max-width: 500px) {
-    font-size: 0.6rem;
+    font-size: 0.5em;
+    margin: 10px 0 0 0;
+    line-height: 10px;
   }
 `;
 
 export const FavoriteCardCalorie = styled.p`
+  position: absolute;
+  width: 100%;
   text-align: center;
   line-height: 22px;
-  margin: 10px 0;
+  bottom: -44px;
+  @media (max-width: 500px) {
+    font-size: 0.7em;
+  }
 `;

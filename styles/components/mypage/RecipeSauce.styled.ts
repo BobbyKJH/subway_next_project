@@ -8,20 +8,19 @@ export const RecipeSauceStyle = styled.div`
     line-height: 30px;
     font-weight: 900;
   }
+  @media (max-width: 500px) {
+    display: flex;
+  }
 `;
 // 소스 이미지
 export const RecipeSauceImage = styled.div`
   display: inline-block;
   img {
+    display: block;
     width: 30%;
   }
   @media (max-width: 500px) {
-    img {
-      &:first-child {
-        display: block;
-        margin: 0 auto;
-      }
-    }
+    display: block;
   }
 `;
 
@@ -34,11 +33,8 @@ export const RecipeSauceName = styled.div`
   }
   @media (max-width: 500px) {
     p {
+      display: block;
       width: 50%;
-      &:first-child {
-        display: block;
-        margin: 0 auto;
-      }
     }
   }
 `;

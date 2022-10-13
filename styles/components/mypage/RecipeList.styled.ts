@@ -4,14 +4,13 @@ export const RecipeListStyle = styled.div`
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  margin: 20px 0;
   width: 50%;
 `;
 
 export const RecipeListImage = styled.img`
   display: inline-block;
   margin: 0 auto;
-  width: 50%;
+  width: 70%;
 `;
 
 export const RecipeListTitle = styled.span`
@@ -23,5 +22,4 @@ export const RecipeListTitle = styled.span`
 export const RecipeListName = styled.p`
   display: block;
   font-size: 0.8rem;
-  font-size: 500;
 `;
