@@ -5,10 +5,10 @@ export const ScorllTopButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   bottom: 70px;
   right: 10px;
   width: 3rem;
-  aspect-ratio: 1/1;
   transition: 0.5s;
   font-size: 2rem;
   color: #000;
@@ -18,5 +18,9 @@ export const ScorllTopButton = styled.button`
   &:hover {
     background-color: #000;
     color: #fff;
+  }
+  @media (max-width: 500px) {
+    width: 30px;
+    height: 30px;
   }
 `;
