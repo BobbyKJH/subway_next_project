@@ -30,10 +30,10 @@ export const MainDescriptionStyle = styled.div`
   }
   @media (max-width: 500px) {
     span {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     p {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   }
 `;

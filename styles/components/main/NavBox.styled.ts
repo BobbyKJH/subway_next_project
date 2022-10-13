@@ -14,14 +14,14 @@ export const NavBoxStyle = styled.div<{ bgc: string }>`
     font-weight: 900;
     font-size: 2rem;
   }
-  @media (max-width: 54rem) {
+  @media (max-width: 72rem) {
     span {
       font-size: 1.5rem;
     }
   }
   @media (max-width: 500px) {
     span {
-      font-size: 1em;
+      font-size: 1rem;
     }
   }
 `;

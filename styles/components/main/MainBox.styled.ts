@@ -6,12 +6,12 @@ export const MainBoxStyle = styled.div`
   margin: 0 auto;
   width: 72rem;
   @media (max-width: 72rem) {
-    width: 1300px;
+    width: 54rem;
   }
-  @media (max-width: 1300px) {
-    width: 1000px;
+  @media (max-width: 54rem) {
+    width: 36rem;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 48rem) {
     width: 100%;
   }
 `;
@@ -22,10 +22,7 @@ export const MainBoxContent = styled.div`
   box-sizing: border-box;
   margin: 0 auto;
   width: 50%;
-  @media (max-width: 1000px) {
-    width: 80%;
-  }
-  @media (max-width: 700px) {
+  @media (max-width: 54rem) {
     width: 90%;
   }
   @media (max-width: 500px) {
