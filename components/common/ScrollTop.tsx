@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // Style
 import { ScorllTopButton } from "../../styles/common/ScrollTop.styled";
 // Image
-import { BiArrowToTop } from "react-icons/bi";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 const ScrollTop = () => {
   const [top, setTop] = useState(0);
@@ -35,7 +35,7 @@ const ScrollTop = () => {
     <>
       {scrollY > 299 ? (
         <ScorllTopButton onClick={scrollTop}>
-          <BiArrowToTop />
+          <AiOutlineArrowUp />
         </ScorllTopButton>
       ) : null}
     </>
