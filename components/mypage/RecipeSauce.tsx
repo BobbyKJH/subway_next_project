@@ -7,32 +7,30 @@ import {
 } from "../../styles/components/mypage/RecipeSauce.styled";
 // Style
 
-const RecipeSauce = ({ title, sauce }: { title?: string; sauce: string[] }) => {
+const RecipeSauce = ({ sauce }: { sauce: string[] }) => {
   // 이미지 || 이름 판단
   const SauceKind = sauce.find((menu) => menu.includes("https"));
 
   return (
-    <RecipeSauceStyle>
-      {sauce.length ? <span>{title}</span> : null}
-
+    <>
       {SauceKind ? (
         // 이미지
 
-        <RecipeSauceImage>
-          {sauce.map((menu, idx) => (
-            <img src={menu} key={idx} />
+        <div>
+          {sauce.map((menu) => (
+            <img src={menu} key={menu} />
           ))}
-        </RecipeSauceImage>
+        </div>
       ) : (
         // 이름
 
-        <RecipeSauceName>
-          {sauce.map((menu, idx) => (
-            <p key={idx}>{menu}</p>
+        <div>
+          {sauce.map((menu) => (
+            <p key={menu}>{menu}</p>
           ))}
-        </RecipeSauceName>
+        </div>
       )}
-    </RecipeSauceStyle>
+    </>
   );
 };
 
