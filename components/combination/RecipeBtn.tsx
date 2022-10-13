@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import React from "react";
 // Redux
 import { useAppSelector } from "../../store/hooks";
-import { selectMenu } from "../../store/recipeSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { resetButton, selectMenu } from "../../store/recipeSlice";
 // Style
 import { RecipeButton } from "../../styles/components/combination/RecipeBtn.styled";
 
@@ -18,6 +19,7 @@ const RecipeBtn = ({
 }) => {
   const router = useRouter();
   const select = useAppSelector(selectMenu);
+  const dispatch = useAppDispatch();
 
   // 소스 Kcal 합산
   const sum = sauceKcal
@@ -48,6 +50,7 @@ const RecipeBtn = ({
         sauceImg: sauceImage,
       })
     );
+    dispatch(resetButton());
     router.push("/combination/result");
   };
 
