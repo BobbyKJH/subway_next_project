@@ -12,7 +12,6 @@ const ScrollTop = () => {
     } else {
       setTop(window.pageYOffset);
     }
-    console.log(top);
   };
 
   const scrollTop = (e: React.MouseEvent<HTMLButtonElement>) => {
