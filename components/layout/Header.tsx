@@ -2,6 +2,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+// Redux
+import { useAppDispatch } from "../../store/hooks";
+import { resetButton } from "../../store/recipeSlice";
 // Component
 import MobileHeader from "./MobileHeader";
 // Style
@@ -13,12 +16,12 @@ import {
 
 const Header = () => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
+  const [mode, setMode] = useState(true);
 
   const Page = (title: string) => {
     return router.pathname.includes(title);
   };
-
-  const [mode, setMode] = useState(true);
 
   const MobileMode = () => {
     if (window.innerWidth > 1000) {
@@ -26,6 +29,10 @@ const Header = () => {
     } else {
       setMode(false);
     }
+  };
+  // MenuList Reset
+  const reset = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    dispatch(resetButton());
   };
 
   useEffect(() => {
@@ -55,7 +62,10 @@ const Header = () => {
               </Link>
 
               <Link href={"/combination/sandwich"}>
-                <HeaderNav className={Page("/combination") ? "active" : ""}>
+                <HeaderNav
+                  onClick={reset}
+                  className={Page("/combination") ? "active" : ""}
+                >
                   조합
                 </HeaderNav>
               </Link>

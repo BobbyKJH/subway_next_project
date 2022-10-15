@@ -2,6 +2,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+// Redux
+import { useAppDispatch } from "../../store/hooks";
+import { resetButton } from "../../store/recipeSlice";
 // Style
 import {
   MobileHeaderStyle,
@@ -15,6 +18,7 @@ import { BsArrowRightSquareFill, BsArrowLeftSquareFill } from "react-icons/bs";
 
 const MobileHeader = () => {
   const router = useRouter();
+  const dispath = useAppDispatch();
   const [nav, setNav] = useState(false);
 
   // page 표시
@@ -27,10 +31,14 @@ const MobileHeader = () => {
     setNav(!nav);
   };
 
+  // MenuList Reset
+  const reset = (e: React.MouseEvent<HTMLButtonElement>) => {
+    dispath(resetButton());
+    setNav(false);
+  };
+
   // nav 선택시 close
-  const closeNav = (
-    e: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
-  ) => {
+  const closeNav = (e: React.MouseEvent<HTMLButtonElement>) => {
     setNav(false);
   };
 
@@ -63,7 +71,7 @@ const MobileHeader = () => {
 
           <Link href={`/combination/sandwich`}>
             <button
-              onClick={closeNav}
+              onClick={reset}
               className={page("/combination") ? "active" : ""}
             >
               <strong>조합</strong>

@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { useAppDispatch } from "../../store/hooks";
+
 // Style
 import {
   MobileFooterBox,
@@ -18,12 +20,19 @@ import {
   RiUser3Fill,
   RiUser3Line,
 } from "react-icons/ri";
+import { resetButton } from "../../store/recipeSlice";
 
 const MobileFooter = () => {
+  const dispatch = useAppDispatch();
   const router = useRouter();
 
   const Page = (title: string) => {
     return router.pathname.includes(`${title}`);
+  };
+
+  // MenuList Reset
+  const reset = (e: React.MouseEvent<HTMLDivElement>) => {
+    dispatch(resetButton());
   };
 
   return (
@@ -45,7 +54,10 @@ const MobileFooter = () => {
       </Link>
 
       <Link href={"/combination/sandwich"}>
-        <MobileFooterBox className={Page("/combination") ? "active" : ""}>
+        <MobileFooterBox
+          onClick={reset}
+          className={Page("/combination") ? "active" : ""}
+        >
           {Page("/combination") ? <RiSubwayFill /> : <RiSubwayLine />}
         </MobileFooterBox>
       </Link>
