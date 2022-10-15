@@ -84,4 +84,4 @@
 
 ## 6. Demo Site
 
-### https://ephemeral-semolina-c44d21.netlify.app/
+### https://mysubwayrecipe.netlify.app/
