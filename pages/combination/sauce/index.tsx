@@ -4,6 +4,7 @@ import React, { useState } from "react";
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
+import PreviousBtn from "../../../components/combination/PreviousBtn";
 // Style
 import {
   CombinationPage,
@@ -70,6 +71,8 @@ const Sauce = ({ sauce }: { sauce: MapType }) => {
         sauceImage={arr.img.slice(0, 3)}
       />
       {/* 메뉴 리스트 완성 버튼 */}
+
+      <PreviousBtn link="cheese" />
     </CombinationPage>
   );
 };

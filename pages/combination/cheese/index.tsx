@@ -12,6 +12,7 @@ import {
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
+import PreviousBtn from "../../../components/combination/PreviousBtn";
 // Style
 import { CombinationButton } from "../../../styles/components/combination/MenuCombination.styled";
 import {
@@ -59,6 +60,9 @@ const Cheese = ({ cheese }: { cheese: MapType }) => {
 
       {/* 메뉴 선택 리스트 */}
       <MenuList />
+
+      {/* 이전 조합 페이지 이동 */}
+      <PreviousBtn link="bread" />
     </CombinationPage>
   );
 };

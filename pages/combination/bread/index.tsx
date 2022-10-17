@@ -8,6 +8,7 @@ import { breadImage, breadKcal, selectBread } from "../../../store/recipeSlice";
 // Component
 import MenuComination from "../../../components/combination/MenuCombination";
 import MenuList from "../../../components/combination/MenuList";
+import PreviousBtn from "../../../components/combination/PreviousBtn";
 // Style
 import { CombinationButton } from "../../../styles/components/combination/MenuCombination.styled";
 import {
@@ -34,6 +35,8 @@ const Bread = ({ bread }: { bread: MapType }) => {
       <CombinationTitle>
         <span>빵</span>
       </CombinationTitle>
+
+      <PreviousBtn link="sandwich" />
 
       {bread.map((item: ProductType) => (
         <CombinationButton
