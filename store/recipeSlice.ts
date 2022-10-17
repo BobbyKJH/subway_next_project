@@ -18,7 +18,7 @@ const initialState: StringType = {
   cheeseCalorie: "",
 };
 
-export const counterSlice = createSlice({
+export const recipeSlice = createSlice({
   name: "recipe",
   initialState,
   reducers: {
@@ -79,9 +79,9 @@ export const {
   cheeseImage,
   cheeseKcal,
   resetButton,
-} = counterSlice.actions;
+} = recipeSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectMenu = (state: RootState) => state.recipe;
 
-export default counterSlice.reducer;
+export default recipeSlice.reducer;
