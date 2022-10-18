@@ -5,11 +5,6 @@ export const CombinationPage = styled.div`
   display: block;
   margin: 0 auto 0 auto;
   width: 72rem;
-  button {
-    &:last-of-type {
-      margin-bottom: 8rem;
-    }
-  }
   @media (max-width: 72rem) {
     width: 54rem;
   }
@@ -18,6 +13,7 @@ export const CombinationPage = styled.div`
   }
   @media (max-width: 34rem) {
     width: 100%;
+    margin-bottom: 7rem;
   }
 `;
 
@@ -60,9 +56,9 @@ export const CombinationResult = styled.div`
     font-weight: 900;
     padding: 3rem 0;
   }
-  p {
+  div {
     border: 3px solid #000;
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
     cursor: pointer;
     padding: 1rem 2rem;
     &:hover {
@@ -72,5 +68,15 @@ export const CombinationResult = styled.div`
   }
   @media (max-width: 54rem) {
     width: 34rem;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    span {
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+    div {
+      padding: 0.8rem 1rem;
+    }
   }
 `;
