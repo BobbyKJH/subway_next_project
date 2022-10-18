@@ -27,7 +27,7 @@ const ResultPage = () => {
         <CombinationResult>
           <span>레시피를 만들어 보세요</span>
           <Link href={"/combination/sandwich"}>
-            <p>만들기</p>
+            <div>만들기</div>
           </Link>
         </CombinationResult>
       )}
